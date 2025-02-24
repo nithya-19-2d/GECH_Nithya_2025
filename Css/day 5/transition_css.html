@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .first{
+            display: flex;
+            background-color: aqua;
+            justify-content: center;
+            align-self: center;
+            border: 2px solid red;
+            width: 10vw;
+            height: 20vh;
+            /* transition: background-color 3s; */
+            transition: all 1s;
+            transition-timing-function: ease-in;
+            transition-delay: 2s;
+            
+        }
+        .first:hover{
+            background-color: blueviolet;
+            transform: translate(300px,400px) scale(2);
+        }
+    </style>
+</head>
+<body>
+    <!-- use transition is = all instead of background when we use both transition and transform -->
+    <div class="first">
+        1
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.4059528464027!2d76.11921397454718!3d13.009800814040625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba5485b583251b7%3A0x513d895c8cc75816!2z4LK44LKw4LON4LKV4LK-4LKw4LK_IOCyh-CyguCynOCyv-CyqOCyv-CysOCyv-CyguCyl-CzjSDgspXgsr7gsrLgs4fgspzgs4EsIOCyueCyvuCyuOCyqA!5e0!3m2!1skn!2sin!4v1740134998243!5m2!1skn!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</body>
+</html>

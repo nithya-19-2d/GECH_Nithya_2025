@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment table</title>
+    <style>
+        table,th,td,tr{
+            border-collapse: collapse;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th colspan="6">Time Table</th>
+        </tr>
+        <tbody>
+            <td rowspan="6">Hours</td>
+            <td>mon</td>
+            <td>tue</td>
+            <td>wed</td>
+            <td>thu</td>
+            <td>fri</td>
+
+            <tr>
+                <td>math</td>
+                <td>science</td>
+                <td>math</td>
+                <td>science</td>
+                <td>art</td>
+            </tr>
+
+            <tr>
+                <td>math</td>
+                <td>science</td>
+                <td>math</td>
+                <td>art</td>
+                <td>science</td>
+            </tr>
+            <tr>
+                <td colspan="5" style="text-align: center;">Lunch</td>
+            </tr>
+            <tr>
+                <td>math</td>
+                <td>art</td>
+                <td>science</td>
+                <td rowspan="2" colspan="2">Project</td>
+                
+            </tr>
+            <tr>
+            
+                    <td>math</td>
+                    <td>science</td>
+                    <td>math</td>
+                    <!-- <td rowspan="2" colspan="2">Project</td> -->
+            </tr>
+        
+
+        </tbody>
+    </table>
+</body>
+</html>

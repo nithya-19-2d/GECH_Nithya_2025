@@ -1,0 +1,20 @@
+/* bootstrap-css framefork */
+h1{
+    /* color: rgb(90, 99, 99); */
+    text-align: center;
+    
+}
+div{
+    color: blueviolet;
+    background-color: antiquewhite;
+    text-align: left;
+    padding: 10px;
+}
+p{
+    color: aquamarine;
+    padding-left: 100px;
+}
+
+i{
+    color: aqua;
+}

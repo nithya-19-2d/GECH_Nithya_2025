@@ -1,0 +1,14 @@
+.f{
+    border: 1px solid black;
+    background-color: rgb(211, 238, 245);
+    /* background-color: rgb(211, 238, 245) !important; */
+}
+.s{
+    /* background-color: rgb(167, 237, 167); */
+    background-color: rgb(167, 237, 167) !important;
+}
+p{
+    background-color: rgb(229, 106, 229) !important;
+    /* background-color: rgb(229, 106, 229) ; */
+    border: 2px solid rgb(235, 49, 49);
+}

@@ -1,0 +1,59 @@
+label{
+    color: aquamarine;
+    background-color: rgb(228, 110, 110);
+    text-align: left;
+    border: 1px solid black;
+    
+}
+
+.ptag{
+    color: bisque;
+    /* background-color: aqua; */
+    
+}
+h1{
+    text-align: center;
+    padding-left:20px ;
+    color: aliceblue;
+}
+
+#div{
+    color: burlywood;
+    /* background-color: rgb(219, 89, 208); */
+
+}
+
+*{
+    /* text-align: center; */
+    font-family: 'Times New Roman', Times, serif;
+    margin: 50px;
+    /* border: 2px solid black; */
+    
+}
+
+label,p,div,input{
+    /* padding-left: 50px;
+    padding: 20px,10px ;
+ */
+ padding: 10px;
+ 
+}
+
+input[type="text"]{
+    /* font-size:50px; */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+background-image:url(./image.png);
+background-repeat: no-repeat;
+/* background-position: left bottom; */
+/* background-position: right top; */
+/* background-attachment: scroll; */
+background-attachment: fixed;
+background-clip: border-box;
+/* background-clip: content-box; */
+/* background-clip: padding-box; */
+opacity: 0.5;  /* transperency*/
+
+}

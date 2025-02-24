@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variable</title>
+    <style>
+        :root{
+            --aqua:rgb(239, 202, 210);
+            --green:rgb(236, 186, 236);
+            }
+            .ptag{
+                background-color: var(--aqua);
+            }
+            .divtag{
+                background-color: var(--green);
+            }
+            .div{
+                --green:rgb(216, 188, 188);
+                background-color: var(--green);
+
+            }
+            .container{
+                width: 50vw;
+                height: 40vh;
+                border: 2px solid red;
+                position: relative;
+            }
+            .child{
+                width: 30vw;
+                height: 5vh;
+                border: 2px solid black;  
+            }
+            .first{
+                background-color: aquamarine;
+                position: relative;
+                margin-top: 30px;
+                z-index: 1;
+
+            }
+            .sec{
+                position: absolute;
+                z-index: 5;
+                right: 10px;
+
+            }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="ptag">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, quam!</div>
+    <div class="divtag">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum, cumque.</div>
+    <div class="div">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, autem?</div><br><br>
+    <div class="container">
+        <div class="child first">1</div>
+        <div class="child sec">2</div>
+    </div>
+</body>
+</html>

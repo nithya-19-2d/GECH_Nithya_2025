@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <style>
+        body{
+            padding: 20px;
+            margin: 20px;
+        }
+        .table_con{
+            width: 80vw;
+            height: 50vh;
+
+        }
+
+        .table_con,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        
+        tr:nth-child(2n){
+            background-color: blueviolet;
+
+        }
+        tr:nth-child(2n+1){
+            background-color: cadetblue;
+
+        }
+        tr:first-child{
+            background-color: rgb(229, 204, 186);
+            color: rgb(8, 28, 65);
+        }
+
+        th,td{
+            text-align: end;
+            padding: 10px;
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+<body>
+    <table class="table_con">
+        <tr>
+        <th>Name </th>
+        <th>Roll</th>
+        <th>age</th>
+        <th>address</th>
+        </tr>
+        <tr>
+            <td>nithya</td>
+            <td>34</td>
+            <td>12</td>
+            <td>bherya</td>
+        </tr>
+        <tr>
+            <td>ithya</td>
+            <td>34</td>
+            <td>11</td>
+            <td>herya</td>
+        </tr>
+
+        <tr>
+            <td>hbjkfvn</td>
+            <td>23</td>
+            <td>12</td>
+            <td>hiurr</td>
+        </tr>
+
+        <tr>
+            <td>byrr</td>
+            <td>23</td>
+            <td>3</td>
+            <td>bjvf</td>
+        </tr>
+
+        <tr>
+            <td>nfbj</td>
+            <td>23</td>
+            <td>12</td>
+            <td>bfjfh</td>
+        </tr>
+         
+    </table>
+</body>
+</html>
