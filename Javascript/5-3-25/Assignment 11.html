@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table_javascript</title>
+    <style>
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 30vw;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        th {
+            background-color: rgb(213, 182, 242);
+        }
+    </style>
+</head>
+
+<body>
+    <table id="demo">
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Age</th>
+        </tr>
+    </table>
+    <script>
+
+        let obj1 = [
+            {
+                Firstname: "Nithya",
+                Lastname: "Anil",
+                Age: 18
+            },
+            {
+                Firstname: "ithya",
+                Lastname: "nil",
+                Age: 13
+            },
+            {
+                Firstname: "hya",
+                Lastname: "il",
+                Age: 15
+            },
+            {
+                Firstname: "thya",
+                Lastname: "il",
+                Age: 12
+            },
+            {
+                Firstname: "shetha",
+                Lastname: "Al",
+                Age: 14
+            }, {
+                Firstname: "firdt",
+                Lastname: "last",
+                Age: 17
+            },
+            {
+                Firstname: "shsc",
+                Lastname: "hgihu",
+                Age: 19
+            },
+            {
+                Firstname: "anil",
+                Lastname: "kumar",
+                Age: 18
+            },
+            {
+                Firstname: "vhg",
+                Lastname: "vhg",
+                Age: 17
+            },
+            {
+                Firstname: "vbcvj",
+                Lastname: "fbjfgf",
+                Age: 16
+            },
+
+        ];
+
+        // fet table body
+        const table = document.getElementById('demo');
+
+        //function to operate
+        function populated() {
+            for (const item of obj1) {
+                let row = document.createElement("tr");
+                let firstname = document.createElement("td");
+                firstname.textContent = item.Firstname;
+                let lastname = document.createElement("td");
+                lastname.textContent = item.Lastname;
+                let age = document.createElement("td");
+                age.textContent = item.Age;
+
+                row.appendChild(firstname);
+                row.appendChild(lastname);
+                row.appendChild(age);
+
+
+                table.appendChild(row);
+
+
+            }
+        }
+        //call  the function to fill the table
+        populated();
+
+
+
+
+    </script>
+    <script>
+
+    </script>
+</body>
+
+</html>

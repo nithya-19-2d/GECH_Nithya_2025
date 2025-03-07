@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop</title>
+</head>
+
+<body>
+    <p>looping statement</p>
+    <p>for loop</p>
+    <p>while loop</p>
+    <p>do while</p>
+
+    <pre>
+        /ini
+        do{
+            <!-- code -->
+             <!-- inic/dec -->
+        }while(condition);
+        
+    </pre>
+    <script>
+        let array1 = ["item1", "item2", "item3", "item"];
+        let len = array1.length;
+        for (let i = 0; i < len; i++) {
+            console.log(array1[i]);
+
+
+        }
+        // while 
+        let j = 0
+        while (j < array1.length) {
+            console.log(array1[j]);
+            j++;
+
+        }
+
+        // let input_var = prompt("enter a number");
+        // // let array3 = ["1", "2", "3", "4"]
+        // // console.log(input_var);
+        // let k = 0;
+        // while (k <= input_var) {
+        //     {
+        //         console.log(k);
+        //     }
+
+
+
+        //     k++;
+        // }
+
+        let l = 1;
+        do {
+            console.log(array1[l]);
+            l++;
+        } while (l > array1.length);
+
+        // do {
+        //     const input_var = +prompt("enter a naumber");
+        //     if (input_var === 20) {
+        //         break
+        //     }
+        // } while (true);
+
+        // // for of
+        // console.log("for of loop");
+        // let new_array = [1, 2, 3, 4, 5];
+        // for (let item of new_array) {
+        //     console.log(item); //for of shows the elements in a array even if giving the clg(item) and new_array[item]
+        // }
+
+        // for in
+        console.log("for in loop");
+        let new_array = ["item", "item2", "item3", "item4", "item5"];
+        for (let item in new_array) {
+            console.log(new_array[item]); //for in shows the elements of an array, when we give the new_array[item]
+        }
+
+        // console.log("for in loop");
+        // let new_array = [1, 2, 3, 4, 5];
+        // for (let item in new_array) {
+        //     console.log(item); // whenever we give the clg(item),which shows the index of an elements rather than showing the elements.
+        // }
+
+
+
+    </script>
+</body>
+
+</html>

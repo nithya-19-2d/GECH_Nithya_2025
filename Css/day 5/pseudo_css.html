@@ -1,47 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pseudo Element</title>
     <style>
-        ::selection{
+        ::selection {
             color: rgb(85, 53, 53);
             background-color: rgb(185, 113, 252);
         }
-        .atag{
+
+        .atag {
             text-decoration: none;
             margin-left: 20px;
         }
-        .atag:hover{
+
+        .atag:hover {
             color: rgb(10, 100, 70);
         }
-        .atag:after{
-         content: "h"
+
+        .atag:after {
+            content: "h"
         }
-        .atag:before{
+
+        .atag:before {
             content: "i";
         }
-        .fir::first-letter{
+
+        .fir::first-letter {
             font-size: 40px;
 
         }
-        .sec::first-line{
+
+        .sec::first-line {
             color: bisque;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="nav">
-        <a href="home" class="atag">home</a>
-        <a href="home" class="atag">about</a>
-        <a href="home" class="atag">contact</a>
+            <a href="home" class="atag">home</a>
+            <a href="home" class="atag">about</a>
+            <a href="home" class="atag">contact</a>
+        </div>
+        <div class="fir">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque culpa iure perferendis non eum
+            sed, aut et quo praesentium minima.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur assumenda reprehenderit sed vitae enim
+            voluptatem necessitatibus velit distinctio consectetur voluptatibus! Veniam, eaque. Quod, eveniet obcaecati
+            culpa ut omnis reprehenderit earum.</div>
+        <div class="sec">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus modi commodi necessitatibus
+            nihil consequuntur quo, nobis, ipsum ea reiciendis iusto aliquid accusamus eius corrupti numquam, at culpa
+            cupiditate tempore deleniti!</div>
     </div>
-    <div class="fir">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque culpa iure perferendis non eum sed, aut et quo praesentium minima.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur assumenda reprehenderit sed vitae enim voluptatem necessitatibus velit distinctio consectetur voluptatibus! Veniam, eaque. Quod, eveniet obcaecati culpa ut omnis reprehenderit earum.</div>
-    <div class="sec">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus modi commodi necessitatibus nihil consequuntur quo, nobis, ipsum ea reiciendis iusto aliquid accusamus eius corrupti numquam, at culpa cupiditate tempore deleniti!</div>
-    </div>
-    
+
 </body>
+
 </html>

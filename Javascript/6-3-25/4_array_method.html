@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>method</title>
+</head>
+
+<body>
+    <h1>Array method</h1>
+    <p>1.foreach</p>
+    <p>2.map</p>
+    <p>3.filter</p>
+    <p>4.reduce</p>
+    <p>5.sqrt</p>
+    <p>6.splice(start,delete,insert)</p>
+    <p>7.each</p>
+    <p>8.some</p>
+    <script>
+        const array1 = [1, 2, 3, 4, 5, 6];
+        //1.foreach
+        array1.forEach((curEle, index, array) => {
+            console.log(curEle * curEle, "index:", index, "array:", array);
+
+        })
+
+        const user = [
+            { Firstname: "nithya", Age: 24, address: "bengaluru" },
+            { Firstname: "nithya1", Age: 24, address: "bengaluru" },
+            { Firstname: "nithya2", Age: 24, address: "bengaluru" },];
+
+        // user.forEach((curEle) => {
+        //     console.log("name:", curEle.Firstname, "age:", curEle.Age); //which display the name and age of each object ,which show the label also
+
+        // })
+
+        // user.forEach((curEle) => {
+        //     console.log(curEle); //which display all objects
+
+        // })
+
+        user.forEach((curEle) => {
+            console.log(curEle.Firstname, curEle.Age); //this also display name and age of each object
+
+        })
+
+        //2.map
+        const array2 = [1, 2, 3, 4, 5, 6, 7];
+        const array3 = array2.map((curEle, index, array) => {
+            return curEle * curEle;
+            // console.log(curEle * curEle); //is not return to the array3 but is store to the array2
+        });
+        // console.log("array2:", array2);
+        console.log("array3:", array3);
+
+        const user1 = [
+            { Firstname: "nithya", Age: 24, address: "bengaluru" },
+            { Firstname: "nithya1", Age: 24, address: "bengaluru" },
+            { Firstname: "nithya2", Age: 24, address: "bengaluru" },];
+
+        const user2 = user1.map((ele) => {
+            return ele.Firstname
+        });
+        console.log("user1:", user1);
+        console.log("user2:", user2);
+
+        //3.filter =>filter is used for filtering the array with some condition
+        const array4 = [3, 4, 5, 6, 7, 8, 9];
+        const array5 = array4.filter((curele) => {
+            return curele % 2 == 0
+        })
+        console.log("array:", array5);
+
+        //reduce
+        // const array6 = [1, 2, 3, 4, 5];
+        // const res = array6.reduce((privious, current, index, array) => {
+        //     return privious + current; //if is not give privious number ,it take first index value for previous and for the current ,it takes the second index value
+        // })
+        // console.log("res:", res);
+
+        const array6 = [1, 2, 3, 4, 5];
+        const res = array6.reduce((privious, current, index, array) => {
+            return privious + current; //if is not give privious number ,it take first index value for previous and for the current ,it takes the second index value.
+        }, 10) //if the privous value is given then it take it as privious value and current value is 1st index value
+        console.log("res:", res);
+
+        //sqrt
+        let array7 = [4, 9, 16, 49, 64];
+        let number = array7.map(Math.sqrt);
+        console.log(number);
+
+        //some
+        let array9 = [3, 4, 5, 6, 7, 8];
+        let array = array9.some((ele, index, array) => {
+            console.log(ele > 2, "index:", index, "array:", array);
+        })
+
+        //each
+
+        // const array11 = [1, 2, 3, 4, 5, 6];
+        // array11.each((curEle, index, array) => {
+        //     console.log(curEle * curEle, "index:", index, "array:", array);
+
+        // })
+
+        //splice(start ,delete, insert)
+
+        //delete
+        let array12 = ["item1", "item2", "item3", "item4", "item5"];
+        let array13 = array12.splice(1, 2);
+        console.log("array13:", array13);
+
+        //adding
+        array12.splice(2, 0, "item6", "item7");
+        console.log(array12);
+
+        //start
+        let fruits = ["apple", "banana", "mango", "orange", "grapes"];
+        fruits.splice(0, 1, "straeberry", "blueberry");
+        console.log(fruits);
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

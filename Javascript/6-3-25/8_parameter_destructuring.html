@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>parameter Destructuring</h1>
+    <script>
+        // const display = function (anything) {
+        //     console.log(anything);
+        // }
+        // display(10);
+        // display("hello");
+        // display([1, 2, 3, 4, 5]);
+        // display({ firstname: "nithya", age: 23 });
+
+        // I need only firstname from the object , so we did the parameter dstructuring
+        // const display = function ({ firstname }) {
+        //     console.log({ firstname });
+        // }
+        // display({ firstname: "nithya", age: 23 });
+
+        //
+        const display = function ({ age }) {
+            console.log(age);
+        }
+        display({ firstname: "nithya", age: 23 });
+
+    </script>
+</body>
+
+</html>

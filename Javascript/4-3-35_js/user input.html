@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USER</title>
+</head>
+
+<body>
+    <h1>how to take a user input</h1>
+    <p>prompt</p>
+    <script>
+
+
+        let input_var = +prompt("enter a name");
+        console.log(input_var);
+        console.log(typeof input_var);
+
+        switch (input_var) {
+            case 0: {
+                console.log("sunday");
+                break;
+            }
+            case 1: {
+                console.log("monday");
+                break;
+            }
+            case 2: {
+                console.log("tuesday");
+                break;
+            }
+            case 5: {
+                console.log("wednesday");
+                break;
+            }
+            case 6: {
+                console.log("thursday");
+                break;
+            }
+            case 7: {
+                console.log("friday");
+                break;
+            }
+            case 8: {
+                console.log("saturday");
+                break;
+            }
+
+            default: {
+                console.log("invalid");
+            }
+        }
+    </script>
+</body>
+
+</html>

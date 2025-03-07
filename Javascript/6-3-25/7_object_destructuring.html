@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>destructure in object</title>
+</head>
+
+<body>
+    <p>spread operator(...)</p>
+    <script>
+        const obj = {
+            firstname: "nithya",
+            age: 21,
+            gender: "female",
+            address: "mysore"
+        }
+        console.log(obj);
+        const { firstname, ...rest } = obj;
+        console.log(firstname)
+        console.log(rest);
+
+        // const { firstname, age } = obj;
+        // console.log(firstname, age);
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variables</title>
+</head>
+
+<body>
+    <h1>how many type we can declare the variables</h1>
+    <h3>4.types</h3>
+    <p>2.automatically</p>
+    <p>3.using var</p>
+    <p>4.using let</p>
+    <p>5.using const</p>
+
+    <script>
+        // 1.automaticzlly
+        var1 = 20;
+        console.log("value of var1:", var1);
+        console.log("Type of var1:", typeof var1);
+
+        // 2.var
+        var var2 = 12;
+        console.log("value of var2:", var2);
+        console.log("Type of var2:", typeof var2);
+
+        // 3.let
+        let var3 = "True";
+        console.log("value of var3:", var3);
+        console.log("Type of var3:", typeof var3);
+
+        // 4.const
+
+        const var4 = 12n;
+        console.log("value of var4:", var4);
+        console.log("Type of var4:", typeof var4);
+
+        // 5.let
+        let var5 = true;
+        console.log("value of var5:", var5);
+        console.log("Type of var5:", typeof var5);
+
+
+        // difference between let, var, const
+        // re-declaration
+        // var do not have block scope
+        // don't use same declared variable and we can't do the initialization
+        var var1 = 23;
+        console.log("list:", var1);
+
+        var var1 = "Hello";
+        console.log("2nd:", var1);
+
+        // let
+        // we don't use same declared variable but we can initialialize value to the same variable
+
+        let var12 = "var12";
+        console.log("list:", var12);
+
+        // let var1 = 34;
+        // console.log("list:", var1);
+
+        var12 = 23;
+        console.log("list:", var12);
+
+
+        // const
+        // don't use same declared variables with const and don't initialized same or diff value to variables
+        const pi = 34;
+        console.log("list:", pi);
+        // pi = 23;
+        // console.log("list:", pi);
+
+        // pi = 34;
+        // console.log("list:", pi);
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

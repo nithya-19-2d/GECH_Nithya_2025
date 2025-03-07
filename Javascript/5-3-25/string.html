@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string</title>
+</head>
+
+<body>
+    <h3>methods in strings</h3>
+    <p>1.length</p>
+    <p>2.slice</p>
+    <p>3.substring</p>
+    <p>4.substr</p>
+    <p>5.replace</p>
+    <p>6.toUpperCase</p>
+    <p>7.toLowerCase</p>
+    <p>8.trim</p>
+    <p>9.indexOf</p>
+    <p>10.startswith/p>
+    <p>11.endwith</p>
+    <p>12. include</p>
+    <script>
+        // let str1="hello world";
+        // console.log(str1);
+        // console.log(typeof str1);
+
+        let str25 = "hello world";
+        const len = str25.length;
+        console.log(`the lenth of the string ${str25} is: ${len}`);
+        console.log("the length of string " + str25 + " is:" + len);
+        console.log("the length of string ", str25, " is:", len);
+
+        // slice
+        let str1 = "javascript";
+        let str2 = str1.slice(2, 7); //it display the 2nd indexed value and exclude the 7th indexed value , its start from 0 to 9
+        console.log(`the slice string is : ${str2}`);
+        console.log(str1[5]);
+        console.log("the sliced value is:", str1.slice(-8, -3)); // same as here also included the -8th value and excluded the -3 value and we take count from reverse, indexed start from -1 to -9
+
+        //3.substring
+        let str3 = "hello javascript";
+        let str4 = str3.substring(2, 7);
+        console.log(`the substring is ${str4}`);
+        console.log(`the substring is ${str3.substring(-6, -8)}`); //substring is not applicable for negative index
+
+        //4.substr
+        let str5 = "hello world";
+        let str6 = str5.substr(3, 6);
+        console.log(`the sutring is ${str6}`);
+        console.log(`the sutring is ${str5.substr(-3, 6)}`);
+
+        //5.replace
+        let str7 = "java script"
+        let str8 = str7.replace("java", "python");
+        console.log(`the string is ${str8}`);
+
+        //6.toUppercase()
+        let str10 = "java";
+        let str11 = str10.toUpperCase();
+        console.log(`the string is ${str11}`);
+
+        //7.tolowercase()
+
+        let str12 = "JAVA";
+        let str13 = str10.toLowerCase();
+        console.log(`the string is ${str13}`);
+
+        //8.trim
+
+        let str16 = "     hello     "; //without trim ,remove the extra space
+        console.log(`the string is ${str16}`);
+
+        let str14 = "     hello     "; //with trim
+        let str15 = str14.trim();
+        console.log(`the string is ${str15}`);
+
+        //9.indexOf
+
+        let str17 = "hello world";
+        let index = str17.indexOf("ello");
+        console.log(`the index of ${index}`);
+
+        //10 startswith
+
+        let str18 = "hello world";
+        let res = str18.startsWith("ello"); //its show false becuse the string is not start from "ello", it start from "h".if we give from first it show "true"
+        console.log(`the string of ${res}`);
+
+        //11.endswith
+
+        let str19 = "hello world";
+        let res1 = str19.endsWith("rld");
+        console.log(`the string of ${res1}`);
+
+        //12.include
+        let str20 = "hello world";
+        let include = str20.includes("world"); // it show included world
+        console.log(`the string of ${include}`);
+
+        // 13.concate
+        let str23 = "hello";
+        let str24 = str23.concat("world");
+        console.log(`the string of ${str24}`);
+
+        let str21 = "hello";
+        let str22 = str21.concat(" ", "world");
+        console.log(`the string of ${str22}`);
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change background</title>
+    <style>
+        .container {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .child {
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="con">
+        <div class="child"><span id="color"></span>
+            <h1 id="color_code">Background color is: </h1>
+            <button type="button" id="demo" onclick="handleClick()">change the bg-color</button>
+        </div>
+    </div>
+    <script>
+        const button = document.getElementById('demo');
+        console.log(button);
+        //used instead of onclick function
+        button.addEventListener('click', function () {
+            console.log("user clicked the button");
+        })
+
+        function getBgColor() {
+            const red = Math.floor(Math.random() * 256);
+            const green = Math.floor(Math.random() * 256);
+            const blue = Math.floor(Math.random() * 256);
+
+            return `rgb(${red} ${green} ${blue})`
+
+
+        }
+
+        function handleClick() {
+            const bg_color = getBgColor();
+            console.log(bg_color);
+            const container = document.getElementById("con");
+            container.style.backgroundColor = bg_color;
+            document.getElementById('color').innerHTML = bg_color;
+        }
+    </script>
+</body>
+
+</html>

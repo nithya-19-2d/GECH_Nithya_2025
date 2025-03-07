@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+
+<body>
+    <p>object = is a blue print ,which consist of both properties and methods</p>
+    create the function outside the class is called function.
+    create a function inside the class is called methos.
+    <p>we can access the properties of object using . and []</p>
+    <script>
+        const car_obj = {
+            carname: "Tesla",
+            type: "EV",
+            wheels: 4,
+            // fourSeat: true,
+            "four Seat": true,
+            speed: function () {
+                console.log("tesla is moving by 60km/s");
+            }
+        }
+        console.log(car_obj);
+        console.log(car_obj.carname);
+        console.log(car_obj.wheels);
+        car_obj.speed();
+        // console.log(car_obj.fourSeat);
+        console.log(car_obj["four Seat"]);
+
+
+        //adding item to an object
+        car_obj.color = "red";
+        console.log("car object:", car_obj);
+
+        // deleting item from object
+        // delete car_obj.wheels;
+        // console.log("After Car object:", car_obj);
+
+        const new_obj = { ...car_obj }
+        //delete item from obj
+        delete new_obj.color;
+        console.log("new object:", new_obj);
+
+    </script>
+</body>
+
+</html>

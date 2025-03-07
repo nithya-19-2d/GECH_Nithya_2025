@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display</title>
+</head>
+
+<body>
+    <p id="demo1">Display function</p>
+    <button type="button" onclick="handleClick()">click on me</button>
+    <button type="button" onclick="handleExternalClick()">click on</button>
+    <button type="button" onclick="Click()">click </button>
+    <button type="button" onclick="Clickon()">click me</button>
+
+    <script>
+        function handleClick() {
+            document.getElementById("demo1").innerHTML = '<span>hello html</span>';
+        }
+        function handleExternalClick() {
+            document.getElementById('demo1').innerText = '<span>hello html</span>';
+        }
+        // function handleClick() {
+        //     console.log("user clicked the button");
+        // }
+
+        // function handleClick() {
+        //     document.write("user clicked the button");
+        // }
+        function Click() {
+            // window.alert("user clicked the button");
+            alert("user clicked the button");
+        }
+        function Clickon() {
+            window.print();
+
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html

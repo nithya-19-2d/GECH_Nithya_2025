@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+</head>
+
+<body>
+    <h1>1.we can change content</h1>
+    <p id="demo">this is existing content</p>
+    <button type="button" onclick="document.getElementById('demo').innerText='js will change the HTML content' ">Click
+        Me</button>
+    <!-- <button type="button" onclick="document.getElementById('demo').innerText=' inline Hello js' ">Click on</button> -->
+    <h1>2.we can change the css style</h1>
+    <p id="demo2">lorem</p>
+    <button type="button" onclick="document.getElementById('demo2').style.color='red'">Click Me</button>
+    <h1>we can hide the html content code</h1>
+    <p id="demo3">lorem 3 </p>
+    <button type="button" onclick="document.getElementById('demo3').style.display='none'">click me</button>
+
+    <h1>we can display the hidden html content code</h1>
+    <p id="demo4">lorem </p>
+    <button type="button" onclick="document.getElementById('demo4').style.display='block'">click me</button>
+
+
+
+
+
+    <h3>2. we can change the attribute of html</h3>
+    <p>JavaScript can change HTML attribute values.</p>
+
+    <p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+
+    <button onclick="document.getElementById('myImage').src='./bulb_on'">Turn on the light</button>
+
+    <img id="myImage" src="bulb_off.jpeg" style="width:100px">
+
+    <button onclick="document.getElementById('myImage').src='./bulb_off'">Turn off the light</button>
+
+
+</body>
+
+</html>

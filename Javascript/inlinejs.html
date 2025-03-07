@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inline</title>
+    <script src="./first.js" defer></script>
+</head>
+
+<body>
+    <!-- inline js -->
+    <p id="demo">Hello html</p>
+    <button type="button" onclick="document.getElementById('demo').innerText=' inline Hello js' ">Click on</button>
+    <button type="button" onclick=" handleClick() ">Internal Js</button>
+    <button type="button" onclick=" handleExternalClick() ">External Js</button>
+
+    <script>
+        function handleClick() {
+            document.getElementById('demo').innerText = 'Hello internal js';
+        }
+    </script>
+</body>
+
+</html>

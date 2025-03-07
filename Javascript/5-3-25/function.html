@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+
+<body>
+    <p>function - is a block of code , which is perform a particular tASK</p>
+    <h1>3 ways to declare the function</h1>
+    <p>1.function declaration</p>
+    <p>2.function expression</p>
+    <p>3.arrow function</p>
+    <p>Syntax:
+    <pre>
+            function function_name(parameter) {
+                //code
+            }
+        </pre>
+    </p>
+    <h2>4 types of function</h2>
+    <p>1.function accepting a parameters and not returning a value</p>
+    <p>2.function accepting a parameters and returning a value</p>
+    <p>3.function not accepting a parameters and not returning a value</p>
+    <p>4.function not accepting a parameters and returning value</p>
+
+    <p>2.function expression
+    <pre>
+            const function_name = function(parameter){
+                function_name(//argument)
+            }
+        </pre>
+
+    </p>
+    <p>3.arrow function</p>
+    <pre>
+        const function_name = parameter =>{
+            //code
+        }function_name(//argument)
+    </pre>
+
+    <script>
+        //use of function=reusability, in javascript(dry=don't repeat yourself)
+        //function declaration 
+        function display() {
+            console.log("this is display function");
+        }
+        //function call
+        // display();
+
+        //1.function accepting a parameters and not returning a value
+        function para_not_return(number) {
+            console.log(`the given number is ${number}`); //it is printing a number not returning,here the value 23 from calling function is accepted by the number parameter
+
+        }
+        para_not_return(23);//argument
+
+        //3.function accepting a parameters and returning a value
+        function para_return(number) {
+            return number;
+
+        }
+        const res = para_return(335);
+        console.log(`the given number is ${res}`);
+
+        //3.function not accepting a parameters and not returning a value
+        function not_para_not_return() {
+            console.log("this not a 3rd type of function");
+
+        }
+        not_para_not_return();
+
+        //4.function not accepting a parameters and returning value
+        function not_para_return() {
+            return 345;
+        }
+        const res1 = not_para_return();
+        console.log(`the result is ${res1}`);
+
+        //even
+        // function even_number(num) {
+        //     if (num % 2 == 0) {
+        //         console.log(`the ${num} is even`);
+        //     }
+        //     else {
+        //         console.log(`the ${num} is odd`);
+
+        //     }
+        //     return num;
+
+        // }
+        // even_number(22);
+
+        function even_number(num) {
+            return num % 2 === 0;
+        }
+        const res2 = even_number(36);
+        if (res2 === true) {
+            console.log("even number");
+        }
+        else {
+            console.log("odd number");
+        }
+
+        //2.function expression
+        const display1 = function () {
+            console.log("this display function expression");
+        }
+        display1();
+
+        //1.
+        const express = function (n) {
+            console.log(`the value of n is ${n}`);
+
+        }
+        express(23);
+
+        //2.
+        const express1 = function (n) {
+            return n;
+
+        }
+        const res5 = express1(12);
+        console.log(`the value is ${res5}`);
+
+        //3.
+        const express2 = function () {
+            console.log("This function is not a type of function");
+        }
+        express2();
+
+        //4.
+        const express3 = function () {
+            return 456;
+
+        }
+        const res6 = express3();
+        console.log(`the value is ${res6}`);
+
+
+
+        //3.arrow function
+        //1.
+        const arrow = (number) => {
+            console.log(`the give number is ${number}`);
+
+
+
+        }
+        arrow(24);
+        //2.
+        const arrow1 = (num) => {
+            return num;
+
+        }
+        const res3 = arrow1(26);
+        console.log("the result is:", res3);
+
+        //3.
+        const arrow2 = () => {
+            console.log("this is not a 3rd type of function");
+        }
+        arrow2();
+
+        //4.
+        const arrow3 = () => {
+            return 367;
+        }
+        const res4 = arrow3();
+        console.log(`the result is ${res4}`);
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

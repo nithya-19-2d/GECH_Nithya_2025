@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web</title>
+    <link rel="stylesheet" href="./css copy 2/boostrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            /* width: 100vw; */
+            height: 100vh;
+            display: flex;
+            justify-self: center;
+            align-items: center;
+            background-color: rgb(58, 107, 199);
+
+        }
+
+        .container {
+            background-color: white;
+            height: auto;
+            padding: 20px;
+            border-radius: 10px;
+
+        }
+
+        a:hover {
+            color: dodgerblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <form action="">
+            <h1>Login</h1>
+            <label for="username">username</label>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+                <input type="text" name="username" id="username" placeholder="Type your Username" class="form-control">
+            </div><br>
+            <label for="password">Passord</label>
+
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
+                <input type="password" name="password" id="password" placeholder="password" class="form-control">
+            </div><br>
+
+            <div class="form-check">
+                <input type="checkbox" name="checkbox" id="checkbox" class="form-check-input">
+                <label for="checkbox" class="form-check-labels">Show Passord</label>
+            </div><br>
+            <div>
+                <button type="button" class="btn btn-info">login</button>
+            </div>
+        </form>
+        <hr>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">New around here? Sign up</a>
+        <a class="dropdown-item" href="#">Forgot password?</a>
+
+    </div>
+    <script src="./css/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

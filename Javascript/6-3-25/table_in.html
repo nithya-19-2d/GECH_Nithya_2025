@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table using for in</title>
+</head>
+
+<body>
+    <table>
+        <thead></thead>
+
+        <tr>
+            <th>Firstname</th>
+            <th>Age</th>
+            <th>address</th>
+        </tr>
+        </thead>
+        <tbody id="table"></tbody>
+
+
+    </table>
+    <script>
+        const user = [
+            { Firstname: "nithya", Age: 24, address: "bengaluru" },
+            { Firstname: "nithya1", Age: 24, address: "bengaluru" },
+            { Firstname: "nithya2", Age: 24, address: "bengaluru" },
+            { Firstname: "nithya3", Age: 24, address: "bengaluru" },
+            { Firstname: "nithya4", Age: 26, address: "bengaluru" },
+            { Firstname: "nithya5", Age: 24, address: "bengaluru" },
+            { Firstname: "nithya6", Age: 24, address: "bengaluru" },
+
+        ];
+
+        let content = "";
+        for (let item in user) {
+            let index = user[item];
+            content += `<tr>
+            <td>${index.Firstname}</td>
+            <td>${index.Age}</td>
+            <td>${index.address}</td >
+            </tr >`
+
+
+
+        }
+        console.log(content);
+        document.getElementById('table').innerHTML = content;
+    </script>
+</body>
+
+</html>
