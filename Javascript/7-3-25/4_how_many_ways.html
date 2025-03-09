@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ways</title>
+    <style>
+
+    </style>
+    <!--1. it is not recomended to use -->
+    <script src="./first.js"></script>
+
+    <!-- 3.it is not recomende to use -->
+    <script src="./first.js" async></script>
+    <!-- 4.it is recomended to use -->
+    <script src="./first.js" defer></script>
+
+</head>
+
+<body>
+    <h1>how many ways we can use external JS in HTML</h1>
+    <p>1.inside a head</p>
+    <p>2.inside a above closing body</p>
+    <p>3.using async inside the head</p>
+    <p>4.using defer inside the head</p>
+    <!-- 2.time to load it is recomended but it will take time to load -->
+    <script src="./first.js"></script>
+    <!-- <script>
+        console.log("hello");
+    </script> -->
+</body>
+
+</html>

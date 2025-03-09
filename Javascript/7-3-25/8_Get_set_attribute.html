@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attribute</title>
+</head>
+
+<body>
+    <h1>Get and Set Attributes</h1>
+    <p>1.getAttribute</p> //to get an attribute
+    <p>2.setAttribut</p> //to set an attribute
+    <a href="./4_how_many_ways.html" id="atag" class="atag">How Many Ways</a>
+    <button type="button" onclick="handleChange()">button</button>
+    <script>
+        const var1 = document.querySelector("#atag");
+        console.log(var1.getAttribute("href"));
+
+        const handleChange = () => {
+            var1.setAttribute("href", "./1_optional_chaning.html")
+            var1.innerText = "Optional Changing"
+        }
+
+    </script>
+</body>
+
+</html>

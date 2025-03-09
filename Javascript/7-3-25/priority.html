@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>priority</title>
+</head>
+
+<body>
+    <h1>Selecting the HTML</h1>
+    <p id="first_p">1.using getElementById</p>
+    <p class="sec_n">2.using getElementsByClassName</p>
+    <p class="sec_n">2.using getElementsByClassName</p>
+    <p class="sec_n">2.using getElementsByClassName</p>
+    <p id="three">3.querrySelector</p>
+
+    <script>
+        //1.using getElementById
+        const var1 = document.getElementById("first_p").style.color = "red";
+        // first_p.style.color = "red";
+
+        //2.using getElementsByClassName
+        const var2 = document.getElementsByClassName("sec_n");
+        console.log(var2);
+        var2[0].style.color = "green"
+
+        //3.using querySelector
+        const var3 = document.querySelector("#three");
+        var3.style.color = "blue";
+    </script>
+</body>
+
+</html>
