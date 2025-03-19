@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Students</title>
+</head>
+
+<body>
+    <h1>Student pages</h1>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>First name</th>
+            <th>last Nae</th>
+            <th>Email</th>
+            <th>phone</th>
+            <th>Address</th>
+        </tr>
+        <tbody>
+            <tr th:each="student:$(students)">
+                <td th:each="$(students.id)"></td>
+                <td th:each="$(students.fname)"></td>
+                <td th:each="$(students.lName)"></td>
+                <td th:each="$(students.email)"></td>
+                <td th:each="$(students.phone)"></td>
+                <td th:each="$(students.address)"></td>
+
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

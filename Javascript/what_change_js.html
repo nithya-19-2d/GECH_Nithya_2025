@@ -21,7 +21,7 @@
     <button type="button" onclick="document.getElementById('demo3').style.display='none'">click me</button>
 
     <h1>we can display the hidden html content code</h1>
-    <p id="demo4">lorem </p>
+    <p id="demo4" style="display: none;">lorem </p>
     <button type="button" onclick="document.getElementById('demo4').style.display='block'">click me</button>
 
 
@@ -33,11 +33,13 @@
 
     <p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
 
-    <button onclick="document.getElementById('myImage').src='./bulb_on'">Turn on the light</button>
+    <button type="button" onclick="document.getElementById('myImage').src='./bulb_on' ">Turn on the
+        light</button>
 
-    <img id="myImage" src="bulb_off.jpeg" style="width:100px">
+    <img id="myImage" src="./bulb_off.jpeg" style="width:100px">
 
-    <button onclick="document.getElementById('myImage').src='./bulb_off'">Turn off the light</button>
+    <button type="button" onclick="document.getElementById('myImage').src='./bulb_off'">Turn off the
+        light</button>
 
 
 </body>

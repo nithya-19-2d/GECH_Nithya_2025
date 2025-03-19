@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <!-- <link rel="stylesheet" href="./css copyA 2/boostrap.min.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: rgb(167, 234, 234);
+            height: 100vh;
+            display: flex;
+            justify-self: center;
+            align-items: center;
+            padding: 30px
+        }
+
+        .container {
+            background-color: white;
+            height: auto;
+            padding: 25px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <form action="#" method="post" id="registrationForm">
+            <fieldset>
+                <h1>Registration Form</h1>
+                <p>please fill the bellow form</p><br>
+
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+                    <input type="text" name="name" id="name" placeholder="username" class="form-control">
+                    <span id="nameerror" class="text-danger"></span>
+                </div><br>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text"><i class="fa-solid fa-envelope"></i>
+                    </span>
+                    <input type="email" id="email" name="email" placeholder="example@gmail.com" class="form-control">
+                    <span id="emailerror" class="text-danger"></span>
+                </div><br>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" name="password" id="password" placeholder="password" class="form-control">
+                    <span id="passerror" class="text-danger"></span>
+                </div><br>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text"><i class="fa-solid fa-user-lock"></i></span>
+                    <input type="password" name="password" id="cpassword" class="form-control" placeholder="confirm">
+                    <span id="cpasserror" class="text-danger"></span>
+                </div><br>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text"><i class="fa-solid fa-house"></i></span>
+                    <!-- <input type="text" name="" id="password" placeholder="password" class="form-control"> -->
+                    <textarea name="address" id="add" placeholder="enter a address" class="form-control"></textarea>
+                    <span id="addresserror" class="text-danger"></span>
+                </div><br>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="number" name="pin" id="pin" class="form-control" placeholder="pincode">
+                    <span id="pinerror" class="text-danger"></span>
+                </div><br>
+                <div class="form-check">
+                    <input type="checkbox" name="checkbox" id="checkbox" class="form-check-input">
+                    <label for="checkbox" class="form-check-labels">please click on this to accept above terms and
+                        conditions</label>
+                </div><br>
+                <div>
+                    <button type="submit" class="btn btn-info">sign up</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <!-- <script src="./css/bootstrap.bundle.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const registrationForm = document.querySelector("#registrationForm")
+            registrationForm.addEventListener("submit", (eve) => {
+                eve.preventDefault();
+                const showError = (eleId, text) => {
+                    document.getElementById(eleId).textContent = text;
+                }
+                const clearError = (eleId) => {
+                    document.getElementById(eleId).textContent = "";
+                }
+                const formValid = () => {
+                    const isValid = true;
+                    const name = document.querySelector("#name").value.trim();
+                    const email = document.querySelector("#email")
+                    const password = document.querySelector("#password")
+                    const confirm = document.querySelector("#cpassword")
+                    const address = document.querySelector("#add")
+                    const pincode = document.querySelector("#pin")
+
+                    if (name === "") {
+                        showError("nameerror", "Name should contain atleast 3 characters")
+                        isValid = false;
+                    }
+                    else if (name.length < 3) {
+                        showError("nameerror", "Name should contain atleast 3 characters")
+                        isValid = false;
+                    }
+                    else {
+                        clearError("nameerror")
+                        isValid = true;
+                    }
+                    console.log(name, email, password, confirm, address, pincode);
+
+                    return isValid;
+
+                    // email validation @gmail.com
+                    const emailPattern = "/^[a-zA-Z0-9+_%+-]+@[a-zA-z0-9.-]+\.[a-zA-Z]{2,}$/"
+                    if (email === "") {
+                        showError("emailerror", "Email feild is required")
+                        isValid = false;
+                    } else if (!emailPattern.test(email)) {
+                        showError("emailerror", "Email is inValid");
+                        isValid = false;
+                    } else {
+                        clearError("emailerror");
+                        isValid = true;
+
+                    }
+                    const passwordPattern = "/^[a-zA-Z0-9+_%+-]+@[a-zA-z0-9.-]+\.[a-zA-Z]{2,}$/"
+                    if (password === "") {
+                        showError("passerror", "password feild is required")
+                        isValid = false;
+                    } else if (!passwordPattern.test(password)) {
+                        showError("passerror", "Password contains atleast one lowercase one uppercase one special character and minimum length is 8 characters");
+                        isValid = false;
+                    } else {
+                        clearError("passlerror");
+                        isValid = true;
+
+                    }
+                    console.log(name, email, password, confirm, address, pincode);
+                    return isValid;
+                }
+                if (formValid()) {
+                    alert("form submitted successfully");
+                    registrationForm.submit();
+                }
+
+            })
+            // if (formValid()) {
+            //     alert("form submitted successfully");
+            //     registrationForm.submit();
+            // }
+        })
+
+
+    </script>
+</body>
+
+</html>

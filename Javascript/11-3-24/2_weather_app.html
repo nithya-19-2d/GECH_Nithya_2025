@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather</title>
+    <link rel="stylesheet" href="./css copy 2/boostrap.min.css">
+    <style>
+        .outerContainer {
+            width: 100vw;
+            height: 100vh;
+
+        }
+
+        .weather img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .search img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .innerContainer {
+            height: 60vh;
+            padding: 20px, 50px;
+            background-color: rgb(93, 93, 210);
+            background: linear-gradient(90deg, rgba(93, 93, 210, 1) 0%, rgba(5, 206, 247, 1) 73%);
+        }
+
+        #inputValue {
+            border: none;
+            outline: none;
+            padding: 20px 30px;
+            border-radius: 20px;
+        }
+
+        .btn {
+            background-color: white;
+            border-radius: 50%;
+            outline: none;
+            padding: 10px 20px;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 35px;
+        }
+
+        .detailes img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .btn:hover {
+            background-color: white;
+        }
+
+        #searchImage {
+            width: 40px;
+            height: 35px;
+        }
+
+        .details {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+
+        }
+
+        .humidityContainer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .wind {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .details h2 {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outerContainer d-flex justify-content-center align-items-center">
+        <div class="innerContainer text-center shadow-lg">
+            <h1 class="fw-bolder">weatherapp</h1>
+            <div class="search mt-5">
+                <input type="text" name="inputValue" id="inputValue" placeholder="Enter city name">
+                <button class="btn"><img src="./search.png" alt="search"> </button>
+            </div>
+            <div class="weather">
+                <img src="./clouds.png" alt="cloud">
+                <h2 class="temp">20 c</h2>
+                <h2 class="city">Hassan</h2>
+            </div>
+            <div class="detailes">
+                <div class="humidityContainer">
+                    <img src="./humidity.png" alt="humidity">
+                    <h2 class="humidity">45%</h2>
+                    <h2>Humidity</h2>
+                </div>
+                <div class="wind">
+                    <img src="./wind.png" alt="wind">
+                    <h2 class="humidity">45km/h</h2>
+                    <h2>wind</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./css/bootstrap.bundle.min.js"></script>
+    <script>
+        const apikey = "2b39877736b816ea1db97025ff001fed"
+        const open_url = "https://api.openweathermap.org/data/2.5/weather?q="
+
+            < script >
+        const apiKey = "700453d87ce8f8510911bbc4e835363b";
+        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q="
+
+        const button = document.querySelector(".btn");
+        const inputValue = document.querySelector("#inputValue");
+        const temp = document.querySelector(".temp");
+        const city_name = document.querySelector(".city");
+        const weatherImg = document.querySelector(".weatherImg");
+        const weather = document.querySelector(".weather");
+        const error = document.querySelector(".error");
+        const details = document.querySelector(".details");
+        const humidity = document.querySelector(".humidity");
+        const wind_speed = document.querySelector(".wind-speed");
+
+
+        const getWeatherData = async (city) => {
+            const fullUrl = `${apiUrl}${city}&appid=${apiKey}`;
+            const res = await fetch(fullUrl);
+            if (res.ok != true) {
+                error.textContent = "Invalid City Name"
+                error.style.display = "block"
+            } else {
+                error.textContent = ""
+                const jsonres = await res.json();
+                console.log(jsonres);
+                temp.textContent = Math.floor(jsonres.main.temp - 273.15) + "°C";
+                city_name.textContent = jsonres.name;
+
+                if (jsonres.weather[0].main === "Clouds") {
+                    weatherImg.src = "./images/clouds.png"
+                } else if (jsonres.weather[0].main === "Clear") {
+                    weatherImg.src = "./images/clear.png"
+                } else if (jsonres.weather[0].main === "Drizzle") {
+                    weatherImg.src = "./images/drizzle.png"
+                } else if (jsonres.weather[0].main === "Mist") {
+                    weatherImg.src = "./images/mist.png"
+                } else if (jsonres.weather[0].main === "Rain") {
+                    weatherImg.src = "./images/rain.png"
+                } else if (jsonres.weather[0].main === "Snow") {
+                    weatherImg.src = "./images/snow.png"
+                }
+                humidity.textContent = jsonres.main.humidity + "%";
+                wind_speed.textContent = Math.floor(jsonres.wind.speed) + "km/h";
+                error.style.display = "none";
+            }
+
+        }
+        button.addEventListener("click", () => {
+            if (inputValue.value === "") {
+                error.textContent = "City name is required"
+                error.style.display = "block"
+            } else {
+                error.textContent = ""
+                getWeatherData(inputValue.value);
+            }
+        })
+
+
+    </script>
+
+</body>
+
+</html>

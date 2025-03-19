@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <style>
+        table,
+        th,
+        tr {
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin: 20px;
+        }
+
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead></thead>
+
+        <tr>
+            <th>Firstname</th>
+            <th>Age</th>
+            <th>address</th>
+        </tr>
+        </thead>
+        <tbody id="table"></tbody>
+
+
+    </table>
+    <script>
+        const user = [
+            { Firstname: "nithya", Age: 24, address: "bengaluru" },
+            { Firstname: "nithya1", Age: 24, address: "bengaluru" },
+            { Firstname: "nithya2", Age: 24, address: "bengaluru" },
+            { Firstname: "nithya3", Age: 24, address: "bengaluru" },
+            { Firstname: "nithya4", Age: 26, address: "bengaluru" },
+            { Firstname: "nithya5", Age: 24, address: "bengaluru" },
+            { Firstname: "nithya6", Age: 24, address: "bengaluru" },
+
+        ];
+
+        let content = "";
+        for (let item of user) {
+            content += `<tr>
+            <td>${item.Firstname}</td>
+            <td>${item.Age}</td>
+            <td>${item.address}</td>
+            </tr>`
+
+
+
+        }
+        console.log(content);
+        document.getElementById('table').innerHTML = content;
+    </script>
+</body>
+
+</html>
