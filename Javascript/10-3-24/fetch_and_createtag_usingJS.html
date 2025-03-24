@@ -12,7 +12,7 @@
     <div id="divtag"></div>
     <script>
         const url = "https://jsonplaceholder.typicode.com/posts";
-        const getUser = async (url) => {
+        const getUser = async(url) => {
             const res = await fetch(url);
             console.log(res);
             const jsonRes = await res.json();

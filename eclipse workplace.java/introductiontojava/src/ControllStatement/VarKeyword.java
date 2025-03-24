@@ -6,8 +6,9 @@ public class VarKeyword {
 		// TODO Auto-generated method stub
        int a = 10;
        var a1 = "hello";
-       for(var i = 0; i<=7; i++);
-       System.out.println();
+       for(var i = 0; i<=7; i++) {
+       System.out.println("the result is:"+a1);
 	}
 
+}
 }

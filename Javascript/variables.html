@@ -47,6 +47,7 @@
         // re-declaration
         // var do not have block scope
         // don't use same declared variable and we can't do the initialization
+
         var var1 = 23;
         console.log("list:", var1);
 
@@ -60,7 +61,7 @@
         console.log("list:", var12);
 
         // let var1 = 34;
-        // console.log("list:", var1);
+        // console.log("list:", var1); 
 
         var12 = 23;
         console.log("list:", var12);
@@ -70,6 +71,8 @@
         // don't use same declared variables with const and don't initialized same or diff value to variables
         const pi = 34;
         console.log("list:", pi);
+        pi = 23;
+        console.log(pi);
         // pi = 23;
         // console.log("list:", pi);
 

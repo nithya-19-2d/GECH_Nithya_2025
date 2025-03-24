@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promis</title>
+</head>
+
+<body>
+    <script>
+
+        var arr = [1, 2, 3, 4, 5]
+        const display = (ele, text) => {
+            return new Promise((resolve, reject) => {
+                if (ele) {
+                    ele.textcontent = text
+                    resolve()
+
+                }
+                else {
+                    reject("rejected")
+                }
+
+            })
+        }
+        display(arr)
+
+    </script>
+</body>
+
+</html>
