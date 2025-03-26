@@ -2,6 +2,7 @@ package interfaceinjava21;
 
 interface Anilmal{
 	public void makesound();
+	
 }
 
 class dog implements Anilmal{
@@ -33,7 +34,7 @@ public class Interfaceinjava {
        * Interface
        * =====
        * It is a blue print of the class
-       * the method in the interface by default abstract (does not contain bodt)
+       * the method in the interface by default abstract (does not contain body)
        * from java 8 we can write default and static methods in interface
        * 
        * 

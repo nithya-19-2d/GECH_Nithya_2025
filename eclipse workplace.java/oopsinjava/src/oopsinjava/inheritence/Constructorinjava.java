@@ -38,6 +38,9 @@ public class Constructorinjava {
 		std1.display();
 //		Student1 std1=new Student1();
 //		std1.display(); is display no arguments constructor, because we have not assign the values
+		//the (java) will create default constructor ,if not we created any constructor
+		//if not we assign values to the instance variable,then java will assign the default value to the instance variables.
+		//for string-null,int-0,double-0.0
 
 	}
 
