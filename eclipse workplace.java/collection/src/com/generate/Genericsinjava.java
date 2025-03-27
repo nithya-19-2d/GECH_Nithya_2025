@@ -24,6 +24,8 @@ public class Genericsinjava {
 		
 		//without generics
 		List arr1 = new ArrayList();//there is no type safety
+		
+		
 		arr1.add(12);
 		arr1.add("hello");
 		int value = (int) arr1.get(0);//explicit type casting

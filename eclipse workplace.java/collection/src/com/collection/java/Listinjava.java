@@ -12,7 +12,7 @@ public class Listinjava {
 		 * =====
 		 * it is child interface of collection
 		 * it have some built in methods that is used inside a list implemented classes only
-		 * list implented classes are-->ArrayList,
+		 * list implented classes are-->ArrayList,linkedlist,stack,vector
 		 * 
 		 * 
 		 * when you represent a group of individual objectas a single entity

@@ -24,7 +24,7 @@ public class StartStudent {
 		System.out.println(list);		
 //		System.out.println(std1);
 		//comaparator->is functional operator and it containes one abstract method
-		//(s1,s2)->this is a dollar expression, it is only applies to functional interface ,function interface means doesnot contain function_name, access-modifier
+		//(s1,s2)->this is a lambda expression, it is only applies to functional interface(Comparator) ,function interface means doesnot contain function_name, access-modifier
 //		Collections.sort(list,(s1,s2)-> s1.getRool_num()-s2.getRool_num());//ascending
 		Collections.sort(list,(s1,s2)-> s2.getRool_num()-s1.getRool_num());//descending
 		System.out.println("after roll");

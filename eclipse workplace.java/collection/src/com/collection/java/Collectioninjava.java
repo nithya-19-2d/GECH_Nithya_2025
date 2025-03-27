@@ -9,11 +9,11 @@ public class Collectioninjava {
 		 * ======================
 		 * to overcome from drawback of array we have to go for collection
 		 * 
-		 * draback of array:
+		 * drawback of array:
 		 * ================
 		 * 1.fixed size
 		 * 2.same data type elements
-		 * we caanot reduce the size of an array
+		 * we cannot reduce the size of an array
 		 * 
 		 * Advantages in array
 		 * ==================

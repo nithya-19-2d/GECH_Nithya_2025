@@ -18,11 +18,11 @@ public class Setinjava {
 			 *  
 			 *  1.order is not preserved
 			 *  2.duplicate will not allow
-			 *  3.random access is there
+			 *  3.random access is not allowed
 			 *  */
 
 		Set<Integer> set = new HashSet<Integer>();
-		set.add(12);
+		set.add(13);
 		set.add(null);
 		set.add(12);
 		set.add(38);
@@ -30,6 +30,8 @@ public class Setinjava {
 		set.add(40);
 		System.out.println(set);
 		System.out.println(set);
+//		System.out.println(((List<Integer>) set).get(0));//random access is not allowed
+		
 		
 		List<Integer> list = new ArrayList<>();
 		list.add(12);
