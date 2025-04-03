@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form th:action="@{/addform}" method="post" th:object = "${employeeDTO}">
+    <h1>Add Student</h1>
+        <label for="name">Name</label>
+        <input type="text" placeholder="Enter your name" th:field="*{name}">
+        <br><br>
+        <label for="age">Age</label>
+        <input type="number" placeholder="Enter your age" th:field="*{age}">
+        <br><br>
+        <label for="email">Email</label>
+        <input type="text" placeholder="Enter your email adress"  th:field="*{email}">
+        <br><br>
+        <label for="phone">Phone</label>
+        <input type="number" placeholder="Enter your phone number" th:field="*{phone}">
+        <br><br>
+        <label for="password">Password</label>
+        <input type="password" placeholder="Enter your password" th:field="*{password}">
+        <br><br>
+        <label for="date">Date of birth</label>
+        <input type="date" placeholder="Enter your DOB" th:field="*{dateofbirth}">
+        <br><br>
+        <label for="city">City</label>
+         <select name="city" id="city" th:field="*{city}">
+                <option value="">select city</option>
+                <option value="bengaluru">Bengaluru</option>
+                <option value="mysore">Mysore</option>
+                <option value="hassan">Hassan</option>
+                <option value="tumakuru">tumakuru</option>
+                <option value="kolar">kolar</option>
+                <option value="kodagu">kodagu</option>
+                <option value="mandya">mandya</option>
+            </select><br><br>
+        
+        <label for="gender">Gender</label>
+            <input type="radio" name="gender" id="male"><label for="male" th:field="*{gender}">Male</label>
+            <input type="radio" name="gender" id="female"><label for="female" th:field="*{gender}">Female</label>
+            <br><br>
+            <label>Skills</label>
+            <input type="checkbox" name="mode" value="java" th:field="*{skills}">java
+            <input type="checkbox" name="mode" value="python" th:field="*{skills}">python 
+            <input type="checkbox" name="mode" value="c++" th:field="*{skills}">c++
+            <input type="checkbox" name="mode" value="javascript" th:field="*{skills}">javascript
+            <br><br>
+            <label for="adrress">Address</label>
+             <textarea rows="2" cols="2" th:field="*{adrress}"></textarea>
+           <br><br>
+            
+        <input type="submit" value="Add Employee">
+    </form>
+</body>
+</html>

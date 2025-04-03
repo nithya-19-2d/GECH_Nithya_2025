@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<h1>Employee pages</h1>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>First name</th>
+            <th>last Name</th>
+            <th>Email</th>
+            <th>phone</th>
+            <th>Designation</th>
+            <th>Salary</th>
+            <th>Action</th>
+            
+        </tr>
+        <tbody>
+            <tr th:each="user:${users}">
+                <td th:text="${user.id}"></td>
+                <td th:text="${user.name}"></td>
+                <td th:text="${users.age}"></td>
+                <td th:text="${users.email}"></td>
+                <td th:text="${users.phone}"></td>
+                <td th:text="${users.password}"></td>
+                <td th:text="${users.dateofbirth}"></td>
+                <td th:text="${users.city}"></td>
+                <td th:text="${users.gender}"></td>
+                <td th:text="${users.skills}"></td>
+                <td th:text="${users.adrress}"></td>
+                
+                 <td>
+                <a th:href = "@{/edit-employee(id = ${employee.id})}">edit</a>
+                <a th:href = "@{/delete-employee(id = ${employee.id})}">delete</a>
+                </td>
+                
+                
+                
+            </tr>
+        </tbody>
+    </table><br><br>
+    <a th:href = "@{/addform}" style ="font-size: 20px; text-decoration: none;">Sign in</a>
+</body>
+</html>

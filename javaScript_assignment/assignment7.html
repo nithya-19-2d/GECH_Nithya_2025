@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 100vh;
+            width: 100vw;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid" id="div">
+        <!-- <button type="button" id="btn" </button> -->
+
+    </div>
+    <!-- <script>
+        //function color() {
+
+
+        // document.getElementById('div').style.backgroundColor = "green"
+        // }
+
+
+        const event = document.querySelector('#div');
+        const btn1 = document.querySelector('#btn')
+        btn1.addEventListener('click', () => {
+            event.style.backgroundColor = 'green';
+            //const res = color();
+            //console.log(res);
+            //const divclass = document.querySelector('#div')
+            //divclass.style.backgroundColor = res
+            //console.log(divclass);
+
+
+        })
+    </script> -->/
+    <script>
+        const eve = document.querySelector('#div')
+        eve.addEventListener('mouseup', (col) => {
+            eve.style.backgroundColor = 'green'
+        })
+
+        eve.addEventListener('mouseout', (col) => {
+            eve.style.backgroundColor = 'green'
+        })
+
+        eve.addEventListener('dblclick', (col) => {
+            eve.style.backgroundColor = 'green'
+        })
+
+        eve.addEventListener('mouseover', (col) => {
+            eve.style.backgroundColor = 'green'
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const url = "https://jsonplaceholder.typicode.com/posts"
+        const getuser = async (url) => {
+            const res = await fetch(url)
+            console.log(res);
+            const json = res.json;
+            console.log(json);
+            json.forEach((curele)=>{
+                const divtag = document.createElement('div')
+                const ptag = document.createElement('p')
+                console.log(divtag);
+                console.log(p);
+                ptag.innerText=`paragraph tag: ${curele.p}`
+                divtag.append(ptag);
+
+            })
+
+        }
+    </script>
+</body>
+</html>
