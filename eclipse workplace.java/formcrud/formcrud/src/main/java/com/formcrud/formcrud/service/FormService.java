@@ -20,7 +20,7 @@ public class FormService {
 		this.formrepository = formrepository;
 	}
 			//to get list of students
-			public List<FormModels> getAllUsers() {
+			public List<FormModels> getAllusers() {
 				List<FormModels> userform = formrepository.findAll();
 		        return userform;
 			}
@@ -40,9 +40,20 @@ public class FormService {
 				formrepository.save(user);
 }
 			//edit
-			public FormModels getUser(Long id) {
-				FormModels user = formrepository.findById(id).get();
-				return user;
+			public FormDTO getUser(Long id) {
+				FormModels users = formrepository.findById(id).get();
+				FormDTO formDTO = new FormDTO();
+				formDTO.setName(users.getName());
+				formDTO.setAge(users.getAge());
+				formDTO.setEmail(users.getEmail());
+				formDTO.setPhone(users.getPhone());
+				formDTO.setPassword(users.getPassword());
+				formDTO.setDateofbirth( users.getDateofbirth());
+				formDTO.setCity( users.getCity());
+				formDTO.setGender( users.getGender());
+				formDTO.setSkills( users.getSkills());
+				formDTO.setAdrress( users. getAdrress());
+				return formDTO;
 			}
 			public void updateUsers(FormDTO formDTO, Long id) {
 				FormModels user = formrepository.findById(id).get();
@@ -65,9 +76,5 @@ public class FormService {
 				FormModels users = formrepository.findById(id).get();
 				formrepository.delete(users);
 			}
-			public static List<FormModels> getAllUsers() {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
+			
 }

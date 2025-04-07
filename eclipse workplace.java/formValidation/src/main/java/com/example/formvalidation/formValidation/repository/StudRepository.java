@@ -7,5 +7,6 @@ import com.example.formvalidation.formValidation.models.Students;
 
 @Repository
 public interface StudRepository extends JpaRepository<Students, Long>{
+	
 
 }
