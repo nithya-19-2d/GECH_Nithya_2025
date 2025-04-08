@@ -34,6 +34,11 @@
      " width="100px" th:src="@{'images/'+${student.imagepath}}"><br>
   <input type="file" id="image" th:field ="*{image}"><br>
   <p th:if = "${#fields.hasErrors('image')}" th:errors = "*{image}"></p>
+   <img alt="resume" height="100px
+     " width="100px" th:src="@{'docs/'+${student.docpath}}"><br>
+  <input type="file" id="resume" th:field ="*{resume}"><br>
+  <p th:if = "${#fields.hasErrors('resume')}" th:errors = "*{resume}"></p>
+  
     <input type="submit" value="submit">
   </form>
 </body>

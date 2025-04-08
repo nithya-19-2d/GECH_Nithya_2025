@@ -61,18 +61,45 @@ public class StudentService {
 			 System.out.println(e.getMessage());
 		 }
 		 
+		 //to upload a document
+		 MultipartFile resume = studentDTO.getResume();
+		 Date createdAt = new Date();
+		 String storeImagename = createdAt.getTime()+"_"+resume.getOriginalFilename(); //here getTime() is in millisecond
+		 System.out.println(storeImagename);
+		 
+		 //to upload a file to one folder
+		 try {
+			 String uploadDirs = "proj/docs/";
+			 Path UploadPath = Paths.get(uploadDirs);
+			 if(!Files.exists(UploadPath)) {
+				 Files.createDirectories(UploadPath);
+			 }
+			 //to add the image to the public/images folder
+			 try {
+				 InputStream inputStreams = resume.getInputStream();
+				 Files.copy(inputStreams, Paths.get(uploadDirs+storeImagename), StandardCopyOption.REPLACE_EXISTING);
+			 }catch(Exception e){
+				 System.out.println(e.getMessage());
+			 }
+		 }catch(Exception e) {
+			 System.out.println(e.getMessage());
+		 }
+		 
+		 
+		 
 		 Students students = new Students();
 		 students.setName(studentDTO.getName());
 		 students.setAge(studentDTO.getAge());
 		 students.setEmail(studentDTO.getEmail());
 		 students.setPassword(studentDTO.getPassword());
 		 students.setImagepath(storeImageName);
+		 students.setDocpath(storeImagename);
 		 studRepository.save(students);
 	 }
 	 
 	 public void deleteStudent(Long id) {
 		 Students student =  studRepository.findById(id).get();
-		 //what is the image path of the student
+		 //what is the image path of the student and to delete the tmage
 		 String uploadDir = "public/images/";
 		 Path imagepath = Paths.get(uploadDir+student.getImagepath());
 		 try {
@@ -81,8 +108,19 @@ public class StudentService {
 			// TODO: handle exception
 			System.out.println(e.getMessage());
 		}
+		 
+		 String uploadDirs = "proj/docs/";
+		 Path docpath = Paths.get(uploadDirs+student.getDocpath());
+		 try {
+			Files.delete(docpath);
+		} catch ( Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+		 
 		 studRepository.delete(student);
 	 }
+	 
 	 
 	 public StudentDTO editStudent(Long id) {
 		 Students students = studRepository.findById(id).get(); //get()->it is a optional class
@@ -116,6 +154,29 @@ public class StudentService {
 				
 				student.setImagepath(storeImageName);
 		 }
+		 
+		 //to edit the document
+		 if(!studentDTO.getResume().isEmpty()) {
+				Path oldImagePaths = Paths.get("proj/docs/"+student.getDocpath());
+				try {
+					Files.delete(oldImagePaths);
+				} catch (Exception e) {
+					System.out.println(e.getMessage());
+				}
+				MultipartFile resume = studentDTO.getResume();
+				Date createdAt = new Date();
+				String storeImagename = createdAt.getTime()+"_"+resume.getOriginalFilename();
+				String uploadDirs = "proj/docs/";
+				try {
+					InputStream inputStreams = resume.getInputStream();
+					Files.copy(inputStreams, Paths.get(uploadDirs+storeImagename), StandardCopyOption.REPLACE_EXISTING);
+				} catch (Exception e) {
+					System.out.println(e.getMessage());
+				}
+				
+				student.setDocpath(storeImagename);
+		 }
+		 
 		 student.setName(studentDTO.getName());
 		 student.setAge(studentDTO.getAge());
 		 student.setEmail(studentDTO.getEmail());

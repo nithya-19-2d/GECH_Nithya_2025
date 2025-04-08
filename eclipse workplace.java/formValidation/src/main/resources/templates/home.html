@@ -67,6 +67,7 @@
                 <th>Age</th>
                 <th>Email</th>
                 <th>Image</th>
+                <th>Resume</th>
                 <th>Action</th>
                 
             </tr>
@@ -83,6 +84,10 @@
                 <td th:text="${student.email}"></td>
                 <td>
                 <img alt="image" width="100px" height="100px" th:src="@{'images/'+${student.imagepath}}">
+                </td>
+                <td>
+                <img alt="docs" width="100px" height="100px" th:src="@{'docs/'+${student.docpath}}">
+                </td>
                 <td>
                     <a th:href="@{edit-student(id = ${student.id})}">Edit</a>
                     <a th:href="@{std-delete(id = ${student.id})}">Delete</a>

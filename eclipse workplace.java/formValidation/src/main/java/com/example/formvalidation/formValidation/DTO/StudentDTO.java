@@ -29,6 +29,7 @@ public class StudentDTO {
 	private String password;
 	
 	private MultipartFile image; //MultipartFile used for taking image directly from frontend
+	private MultipartFile resume;
 	
 	
 	public String getName() {
@@ -60,6 +61,12 @@ public class StudentDTO {
 	}
 	public void setImage(MultipartFile image) {
 		this.image = image;
+	}
+	public MultipartFile getResume() {
+		return resume;
+	}
+	public void setResume(MultipartFile resume) {
+		this.resume = resume;
 	}
 	
 

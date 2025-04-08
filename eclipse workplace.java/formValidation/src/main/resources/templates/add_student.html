@@ -29,6 +29,11 @@ margin:30px;
   <lable for ="image">Image</lable>
   <input type="file" id="image" th:field ="*{image}"><br>
   <p th:if = "${#fields.hasErrors('image')}" th:errors = "*{image}"></p>
+  <lable for ="resume">Resume</lable>
+  <input type="file" id="resume" th:field ="*{resume}"><br>
+  <p th:if = "${#fields.hasErrors('resume')}" th:errors = "*{resume}"></p>
+  
+  
   <input type = "submit" value = "submit">
   </form>
 </body>

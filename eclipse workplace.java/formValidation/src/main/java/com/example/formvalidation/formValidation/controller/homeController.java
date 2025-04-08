@@ -52,10 +52,18 @@ public class homeController {
 	
 	@PostMapping("/add-student")
 	public String addstudent(@Valid @ModelAttribute StudentDTO studentDTO, BindingResult result, Model model, RedirectAttributes attributes) {
+		//email validation
+		Students student =studRepository.findByEmail(studentDTO.getEmail());
+		if(student != null) {
+			result.addError(new FieldError("StudentDTO", "email", "email is required"));
+		}
+		
+		//this for image
 		if(studentDTO.getImage().isEmpty()) {
 			result.addError(new FieldError("StudentDTO", "image", "image is required"));
 		}
 		
+		//to show error shows for name
 		if(result.hasErrors()) {
 			return "add_student";
 		}
@@ -85,6 +93,13 @@ public class homeController {
 	
 	@PostMapping("/std-edit")
 	public String updateStudent(@Valid @ModelAttribute StudentDTO studentDTO,@RequestParam Long id, BindingResult result, Model model) {
+		//email validation
+				Students student1 =studRepository.findByEmail(studentDTO.getEmail());
+				if(student1 != null && student1.getId()!=id) {
+					result.addError(new FieldError("StudentDTO", "email", "email is required"));
+				}
+				
+				
 		if(result.hasErrors()) {
 			Students student = studRepository.findById(id).get();
 			model.addAttribute("student",student);

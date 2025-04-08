@@ -17,20 +17,20 @@ public class Students {
 	private String name;
 	@Column(name = "std_age")
 	private int age;
-	@Column(name = "std_email")
+	@Column(unique = true)
 	private String email;
 	@Column(name = "std_password")
 	private String password;
 	
 	private String imagepath; //we use String ,because we just write imagepath.
+	private String docpath;
 	
 	//no args constructor
 	public Students() {
 		super();
 	}
-	
 	//full-args constructor
-	public Students(long id, String name, int age, String email, String password, String imagepath) {
+	public Students(long id, String name, int age, String email, String password, String imagepath, String docpath) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -38,7 +38,11 @@ public class Students {
 		this.email = email;
 		this.password = password;
 		this.imagepath = imagepath;
+		this.docpath = docpath;
 	}
+
+	
+	
 	
 
 	//getters and setters
@@ -88,6 +92,12 @@ public class Students {
 
 	public void setImagepath(String imagepath) {
 		this.imagepath = imagepath;
+	}
+	public String getDocpath() {
+		return docpath;
+	}
+	public void setDocpath(String docpath) {
+		this.docpath = docpath;
 	}
 	
 
