@@ -5,26 +5,59 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form th:action="@{/addEmployee}" method="post" th:object = "${employeeDTO}">
-    <h1>Add Employee</h1>
-        <label for="name">First Name</label>
-        <input type="text" placeholder="Enter your first name" th:field="*{fname}">
+<form th:action="@{/edit-employee(id = ${user.id})}" method="post" th:object = "${formdto}">
+   <h1>Edit Details</h1>
+        <label for="name">Name</label>
+        <input type="text" placeholder="Enter your name" th:field="*{name}">
+         <p th:if = "${#fields.hasErrors('name')}" th:errors = "*{name}"></p>
         <br><br>
-        <label for="name">Last Name</label>
-        <input type="text" placeholder="Enter your Last name"  th:field="*{lname}">
+        <label for="age">Age</label>
+        <input type="number" placeholder="Enter your age" th:field="*{age}">
+         
         <br><br>
-        <label for="email">email</label>
+        <label for="email">Email</label>
         <input type="text" placeholder="Enter your email adress"  th:field="*{email}">
+         <p th:if = "${#fields.hasErrors('email')}" th:errors = "*{email}"></p>
         <br><br>
-        <label for="name">Phone</label>
+        <label for="phone">Phone</label>
         <input type="number" placeholder="Enter your phone number" th:field="*{phone}">
         <br><br>
-        <label>designation</label>
-        <input type="text" placeholder="Enter your adress"  th:field="*{designation}"><br><br>
-         <label>salary</label>
-        <input type="text" placeholder="Enter your adress"  th:field="*{salary}"><br><br>
+        <label for="password">Password</label>
+        <input type="password" placeholder="Enter your password" th:field="*{password}">
+         <p th:if = "${#fields.hasErrors('password')}" th:errors = "*{password}"></p>
+        <br><br>
+        <label for="date">Date of birth</label>
+        <input type="date" placeholder="Enter your DOB" th:field="*{dateofbirth}">
+         <p th:if = "${#fields.hasErrors('dateofbirth')}" th:errors = "*{dateofbirth}"></p>
+        <br><br>
+        <label for="city">City</label>
+         <select name="city" id="city" th:field="*{city}">
+                <option value="">select city</option>
+                <option value="bengaluru">Bengaluru</option>
+                <option value="mysore">Mysore</option>
+                <option value="hassan">Hassan</option>
+                <option value="tumakuru">tumakuru</option>
+                <option value="kolar">kolar</option>
+                <option value="kodagu">kodagu</option>
+                <option value="mandya">mandya</option>
+            </select><br><br>
         
-        <input type="submit" value="Add Employee">
+        <label for="gender">Gender</label>
+            <input type="radio" name="gender" id="male"><label for="male" th:field="*{gender}">Male</label>
+            <input type="radio" name="gender" id="female"><label for="female" th:field="*{gender}">Female</label>
+            <br><br>
+            <label>Skills</label>
+            <input type="checkbox" name="mode" value="java" th:field="*{skills}">java
+            <input type="checkbox" name="mode" value="python" th:field="*{skills}">python 
+            <input type="checkbox" name="mode" value="c++" th:field="*{skills}">c++
+            <input type="checkbox" name="mode" value="javascript" th:field="*{skills}">javascript
+            <br><br>
+            <label for="adrress">Address</label>
+             <textarea rows="2" cols="2" th:field="*{adrress}"></textarea>
+              <p th:if = "${#fields.hasErrors('adrress')}" th:errors = "*{adrress}"></p>
+           <br><br>
+            
+        <input type="submit" value="submit">
     </form>
 </body>
 </html>

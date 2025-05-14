@@ -25,56 +25,56 @@ public class FormService {
 		        return userform;
 			}
 			//to save the 
-			public void saveEmployee(FormDTO formDTO) {
-				FormModels user = new FormModels();
-				user.setName(formDTO.getName());
-				user.setAge(formDTO.getAge());
-				user.setEmail(formDTO.getEmail());
-				user.setPhone(formDTO.getPhone());
-				user.setPassword(formDTO.getPassword());
-				user.setDateofbirth( formDTO.getDateofbirth());
-				user.setCity( formDTO.getCity());
-				user.setGender( formDTO.getGender());
-				user.setSkills( formDTO.getSkills());
-				user.setAdrress( formDTO. getAdrress());
-				formrepository.save(user);
+			public void saveEmployee(FormDTO formdto) {
+				FormModels users = new FormModels();
+				users.setName(formdto.getName());
+				users.setAge(formdto.getAge());
+				users.setEmail(formdto.getEmail());
+				users.setPhone(formdto.getPhone());
+				users.setPassword(formdto.getPassword());
+				users.setDateofbirth( formdto.getDateofbirth());
+				users.setCity( formdto.getCity());
+				users.setGender( formdto.getGender());
+				users.setSkills( formdto.getSkills());
+				users.setAdrress( formdto. getAdrress());
+				formrepository.save(users);
 }
 			//edit
 			public FormDTO getUser(Long id) {
 				FormModels users = formrepository.findById(id).get();
-				FormDTO formDTO = new FormDTO();
-				formDTO.setName(users.getName());
-				formDTO.setAge(users.getAge());
-				formDTO.setEmail(users.getEmail());
-				formDTO.setPhone(users.getPhone());
-				formDTO.setPassword(users.getPassword());
-				formDTO.setDateofbirth( users.getDateofbirth());
-				formDTO.setCity( users.getCity());
-				formDTO.setGender( users.getGender());
-				formDTO.setSkills( users.getSkills());
-				formDTO.setAdrress( users. getAdrress());
-				return formDTO;
+				FormDTO formdto = new FormDTO();
+				formdto.setName(users.getName());
+				formdto.setAge(users.getAge());
+				formdto.setEmail(users.getEmail());
+				formdto.setPhone(users.getPhone());
+				formdto.setPassword(users.getPassword());
+				formdto.setDateofbirth( users.getDateofbirth());
+				formdto.setCity( users.getCity());
+				formdto.setGender( users.getGender());
+				formdto.setSkills( users.getSkills());
+				formdto.setAdrress( users. getAdrress());
+				return formdto;
 			}
-			public void updateUsers(FormDTO formDTO, Long id) {
+			public void updateUsers(FormDTO formdto, Long id) {
 				FormModels user = formrepository.findById(id).get();
 //				Studentdto studentDTO = new Studentdto();
-				user.setName(formDTO.getName());
-				user.setAge(formDTO.getAge());
-				user.setEmail(formDTO.getEmail());
-				user.setPhone(formDTO.getPhone());
-				user.setPassword(formDTO.getPassword());
-				user.setDateofbirth( formDTO.getDateofbirth());
-				user.setCity( formDTO.getCity());
-				user.setGender( formDTO.getGender());
-				user.setSkills( formDTO.getSkills());
-				user.setAdrress( formDTO. getAdrress());
+				user.setName(formdto.getName());
+				user.setAge(formdto.getAge());
+				user.setEmail(formdto.getEmail());
+				user.setPhone(formdto.getPhone());
+				user.setPassword(formdto.getPassword());
+				user.setDateofbirth( formdto.getDateofbirth());
+				user.setCity( formdto.getCity());
+				user.setGender( formdto.getGender());
+				user.setSkills( formdto.getSkills());
+				user.setAdrress( formdto. getAdrress());
 				formrepository.save(user);
 				
 			}
 			//to delete the users
-			public void deleteUser(FormDTO formDTO, Long id) {
-				FormModels users = formrepository.findById(id).get();
-				formrepository.delete(users);
+			public void deleteUser(Long id) {
+				FormModels user = formrepository.findById(id).get();
+				formrepository.delete(user);
 			}
 			
 }

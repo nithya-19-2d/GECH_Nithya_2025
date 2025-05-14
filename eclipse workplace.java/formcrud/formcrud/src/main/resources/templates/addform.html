@@ -5,25 +5,30 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form th:action="@{/add-form}" method="post" th:object = "${employeeDTO}">
+<form th:action="@{/add-form}" method="post" th:object = "${formdto}">
     <h1>Add Student</h1>
         <label for="name">Name</label>
         <input type="text" placeholder="Enter your name" th:field="*{name}">
+         <p th:if = "${#fields.hasErrors('name')}" th:errors = "*{name}"></p>
         <br><br>
         <label for="age">Age</label>
         <input type="number" placeholder="Enter your age" th:field="*{age}">
+         
         <br><br>
         <label for="email">Email</label>
         <input type="text" placeholder="Enter your email adress"  th:field="*{email}">
+         <p th:if = "${#fields.hasErrors('email')}" th:errors = "*{email}"></p>
         <br><br>
         <label for="phone">Phone</label>
         <input type="number" placeholder="Enter your phone number" th:field="*{phone}">
         <br><br>
         <label for="password">Password</label>
         <input type="password" placeholder="Enter your password" th:field="*{password}">
+         <p th:if = "${#fields.hasErrors('password')}" th:errors = "*{password}"></p>
         <br><br>
         <label for="date">Date of birth</label>
         <input type="date" placeholder="Enter your DOB" th:field="*{dateofbirth}">
+         <p th:if = "${#fields.hasErrors('dateofbirth')}" th:errors = "*{dateofbirth}"></p>
         <br><br>
         <label for="city">City</label>
          <select name="city" id="city" th:field="*{city}">
@@ -49,9 +54,10 @@
             <br><br>
             <label for="adrress">Address</label>
              <textarea rows="2" cols="2" th:field="*{adrress}"></textarea>
+              <p th:if = "${#fields.hasErrors('adrress')}" th:errors = "*{adrress}"></p>
            <br><br>
             
-        <input type="submit" value="Add Employee">
+        <input type="submit" value="sign in">
     </form>
 </body>
 </html>

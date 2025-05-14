@@ -134,6 +134,7 @@ public class StudentService {
 		
 	 public void updateStudent(StudentDTO studentDTO, Long id) {
 		 Students student = studRepository.findById(id).get(); //get()->it is a optional class
+		 //to get image
 		 if(!studentDTO.getImage().isEmpty()) {
 				Path oldImagePath = Paths.get("public/images/"+student.getImagepath());
 				try {

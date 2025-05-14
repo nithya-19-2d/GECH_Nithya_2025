@@ -25,19 +25,19 @@
             <tr th:each="user:${users}">
                 <td th:text="${user.id}"></td>
                 <td th:text="${user.name}"></td>
-                <td th:text="${users.age}"></td>
-                <td th:text="${users.email}"></td>
-                <td th:text="${users.phone}"></td>
-                <td th:text="${users.password}"></td>
-                <td th:text="${users.dateofbirth}"></td>
-                <td th:text="${users.city}"></td>
-                <td th:text="${users.gender}"></td>
-                <td th:text="${users.skills}"></td>
-                <td th:text="${users.adrress}"></td>
+                <td th:text="${user.age}"></td>
+                <td th:text="${user.email}"></td>
+                <td th:text="${user.phone}"></td>
+                <td th:text="${user.password}"></td>
+                <td th:text="${user.dateofbirth}"></td>
+                <td th:text="${user.city}"></td>
+                <td th:text="${user.gender}"></td>
+                <td th:text="${user.skills}"></td>
+                <td th:text="${user.adrress}"></td>
                 
                  <td>
-                <a th:href = "@{/edit-employee(id = ${employee.id})}">edit</a>
-                <a th:href = "@{/delete-employee(id = ${employee.id})}">delete</a>
+                <a th:href = "@{/edit-form(id = ${user.id})}">edit</a>
+                <a th:href = "@{/delete_form(id = ${user.id})}">delete</a>
                 </td>
                 
                 
@@ -45,6 +45,6 @@
             </tr>
         </tbody>
     </table><br><br>
-    <a th:href = "@{/addform}" style ="font-size: 20px; text-decoration: none;">Sign in</a>
+    <a th:href = "@{/add-form}" style ="font-size: 20px; text-decoration: none;">Sign in</a>
 </body>
 </html>

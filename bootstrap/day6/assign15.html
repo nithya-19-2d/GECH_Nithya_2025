@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f6fcff;
+        }
+
+        .profile-form {
+            max-width: 500px;
+            margin: 30px auto;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .profile-card {
+            width: 150px;
+            height: 180px;
+            border-radius: 10px;
+            color: white;
+            margin: 10px;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-card .icon {
+            font-size: 50px;
+        }
+
+        .delete-btn {
+            color: red;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light bg-light px-4">
+        <ul class="nav">
+            <li class="nav-item"><a class="nav-link" href="#">Students</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Employees</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Staffs</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
+        </ul>
+    </nav>
+
+    <div class="container profile-form">
+        <h3 class="text-center mb-4">Profile Form</h3>
+        <div class="card shadow-sm p-4">
+            <form id="profileForm">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="name" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Gender:</label><br />
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" value="male" required />
+                        <label class="form-check-label">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" value="female" />
+                        <label class="form-check-label">Female</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Favorite Color:</label>
+                    <input type="color" id="color" class="form-control form-control-color" value="#000000" />
+                </div>
+                <div class="mb-3">
+                    <label for="fontSize" class="form-label">Font Size: <span id="fontSizeDisplay">16px</span></label>
+                    <input type="range" class="form-range" min="14" max="30" value="16" id="fontSize" />
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container card-container">
+        <div class="row" id="cardContainer"></div>
+    </div>
+
+    <script>
+        const profileForm = document.getElementById("profileForm");
+        const fontSizeRange = document.getElementById("fontSize");
+        const fontSizeDisplay = document.getElementById("fontSizeDisplay");
+        const cardContainer = document.getElementById("cardContainer");
+        //var image = document.createElement("img");
+        //image.src = "C:\Users\Nithin\Desktop\GECH_parvam_2025\GECH_Nithya_2025\bootstrap\day6\nithya icon.jpg";
+        //image.alt = "image not found";
+        //image.style.width = "90px";
+
+        //var boyimg = document.createElement("img");
+        //boyimg.src = "C:\Users\Nithin\Desktop\GECH_parvam_2025\GECH_Nithya_2025\bootstrap\day6\nithyon icon.jpg";
+        //boyimg.alt = "image not";
+        //boyimg.style.width = "90px";
+
+        fontSizeRange.addEventListener("input", () => {
+            fontSizeDisplay.textContent = fontSizeRange.value + "px";
+        });
+
+        profileForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const gender = document.querySelector("input[name='gender']:checked").value;
+            const color = document.getElementById("color").value;
+            const fontSize = fontSizeRange.value;
+            const iconimg = document.createElement("img");
+            iconimg.src = gender === "male" ? "https://uxwing.com/man-user-circle-icon/" : "https://uxwing.com/woman-user-circle-icon/";
+            iconimg.style.width = "90px";
+
+
+            const cardcol = document.createElement("div");
+            cardcol.className = "col-12 col-md-4 col-lg-3 col-sm-6";
+
+            const card = document.createElement("div");
+            card.className = "profile-card";
+            card.style.backgroundColor = color;
+            card.style.fontSize = fontSize + "px";
+
+            card.innerHTML = `
+        <div class="icon">${icon}</div>
+        <div class="name mt-2">${name}</div>
+        <div class="delete-btn" onclick="this.parentElement.remove()">
+          <i class="bi bi-trash"></i>
+        </div>
+      `;
+
+            cardContainer.appendChild(cardcol);
+            cardcol.appendChild(card);
+            profileForm.reset();
+            fontSizeDisplay.textContent = "16px";
+            fontSizeRange.value = 16;
+        });
+    </script>
+
+</body>
+
+</html>

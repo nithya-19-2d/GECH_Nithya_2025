@@ -1,5 +1,6 @@
 package com.formcrud.formcrud.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,9 +13,10 @@ import jakarta.persistence.Table;
 public class FormModels {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private long id;
 	private String name;
-	private String age;
+	private int age;
+	@Column(unique = true)
 	private String email;
 	private String phone;
 	private String password;
@@ -24,11 +26,10 @@ public class FormModels {
 	private String skills;
 	private String adrress;
 	
-	
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -37,10 +38,10 @@ public class FormModels {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getAge() {
+	public int getAge() {
 		return age;
 	}
-	public void setAge(String age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 	public String getEmail() {
@@ -91,7 +92,6 @@ public class FormModels {
 	public void setAdrress(String adrress) {
 		this.adrress = adrress;
 	}
-	
 	
 	
 	
