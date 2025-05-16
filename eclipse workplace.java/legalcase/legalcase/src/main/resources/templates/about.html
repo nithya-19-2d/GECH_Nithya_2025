@@ -1,10 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::title}, ~{::section})}">
+
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lawyer-Client Management System</title>
+
+
 </head>
+
 <body>
 
+    <section>
+        <!-- Navbar -->
+
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container text-center align-items-center d-flex flex-column justify-content-center h-100">
+                <h1>About Our System</h1>
+                <p style="font-size:18px">A platform that brings lawyers and clients together for effective case
+                    management.
+                </p>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+
+        <section class="section bg-light" style="height:50vh">
+            <div class="container">
+                <h2 class="text-center mb-5 mt-5">Key Features</h2>
+                <div class="row text-center g-3">
+                    <div class="col-md-3">
+                        <h4>Secure Login</h4>
+                        <p class="font">JWT-based role authentication ensures that both clients and lawyers access only
+                            their respective
+                            data with full privacy and protection.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>Case Management</h4>
+                        <p class="font">Track all your legal cases, documents, hearing dates, and notes in one place for
+                            easy follow-up
+                            and management.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>Smart Scheduling</h4>
+                        <p class="font">Built-in calendar support helps schedule and manage appointments between lawyers
+                            and
+                            clients
+                            effortlessly.</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <h4>Real-Time Updates</h4>
+                        <p class="font">Stay informed with instant notifications for updates in your case status,
+                            meetings,
+                            or shared
+                            documents.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lawyer Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="text-center mb-5">Our Lawyers</h2>
+                <div class="row text-center">
+                    <div class="col-md-4 mb-4">
+                        <img th:src="@{Photos/lawywe2.jpg}" alt="Lawyer 1" class="lawyer-img mb-3">
+                        <h5>Adv. Sarah Mitchell</h5>
+                        <p>Family Law Specialist</p>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <img th:src="@{Photos/lawyer3.jpg}" alt="Lawyer 2" class="lawyer-img mb-3">
+                        <h5>Adv. Rajeev Nair</h5>
+                        <p>Corporate & Business Law</p>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <img th:src="@{Photos/lawywe1.jpg }" alt="Lawyer 3" class="lawyer-img mb-3">
+                        <h5>Adv. Emily Chen</h5>
+                        <p>Criminal Defense Expert</p>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+    </section>
+
+
 </body>
+
 </html>

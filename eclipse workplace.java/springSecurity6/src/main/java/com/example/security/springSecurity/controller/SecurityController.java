@@ -47,9 +47,17 @@ public class SecurityController {
 		}
 		
 		@PostMapping("/register")
-		public String register(@ModelAttribute StudentDTO studentDTO , RedirectAttributes redirectAttributes) {
-			studentService.storeStudent(studentDTO);
-			redirectAttributes.addFlashAttribute("success","student saved succefully");
+		public String register(@ModelAttribute StudentDTO studentDTO , RedirectAttributes redirectAttributes, Model model) {
+			//studentService.storeStudent(studentDTO);
+			//redirectAttributes.addFlashAttribute("success","student saved succefully");
+			try {
+				studentService.storeStudent(studentDTO);
+				redirectAttributes.addFlashAttribute("success","Student saved succesfully");
+			} catch (Exception e) {
+				model.addAttribute("error","Failed to send email");
+				return "registration";
+			}
+
 			return "redirect:/";
 			
 		}

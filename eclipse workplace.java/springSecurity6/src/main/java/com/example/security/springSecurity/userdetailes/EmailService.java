@@ -12,32 +12,38 @@ import jakarta.mail.internet.MimeMessage;
 @Service
 public class EmailService {
 	private JavaMailSender mailSender;
-	private TemplateEngine templateengine;
-	public EmailService(JavaMailSender mailSender, TemplateEngine templateengine) {
+	private TemplateEngine templateEngine;
+	
+	public EmailService(JavaMailSender mailSender, TemplateEngine templateEngine) {
 		super();
 		this.mailSender = mailSender;
-		this.templateengine = templateengine;
+		this.templateEngine = templateEngine;
 	}
-	
-	public void sendEmail(String to, String email, String password, String name) throws MessagingException {
+
+	public void sendEmail(String to, String email, String password, String name ) throws MessagingException {
 		Context context = new Context();
-		context.setVariable("name", name);
-		context.setVariable("username", email);
-		context.setVariable("password", password);
-		//construct login URL (adjust base URL as needed)
-		String loginUrl = "http://localhost:8080/login"; // or your domain http://myapp.com/login
-		 context.setVariable("loginUrl", loginUrl);
-			
-			String htmlbody =  templateengine.process("registration_email", context);
-			
-			MimeMessage message = mailSender.createMimeMessage();
-			MimeMessageHelper helper = new MimeMessageHelper(message,true);
-			
-			helper.setTo(to);
-			helper.setSubject("Your Account Login Detail");
-			helper.setText(htmlbody,true);
-			
-			mailSender.send(message);
+		
+		context.setVariable("name",name);
+		context.setVariable("username",email);
+		context.setVariable("password",password);
+		 // Construct login URL (adjust base URL as needed)
+	    String loginUrl = "http://localhost:8080/login";  // or your domain: https://myapp.com/login
+	    context.setVariable("loginUrl", loginUrl);
+		
+		String htmlbody =  templateEngine.process("registration_email", context);
+		
+		MimeMessage message = mailSender.createMimeMessage();
+		MimeMessageHelper helper = new MimeMessageHelper(message,true);
+		
+		helper.setTo(to);
+		helper.setSubject("Your Account Login Detail");
+		helper.setText(htmlbody,true);
+		
+		mailSender.send(message);
+	}
+
+		
+		
 
 	}
 	
@@ -45,4 +51,4 @@ public class EmailService {
 	
 	
 
-}
+
