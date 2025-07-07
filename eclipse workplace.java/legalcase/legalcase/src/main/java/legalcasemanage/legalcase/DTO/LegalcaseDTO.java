@@ -1,9 +1,14 @@
 package legalcasemanage.legalcase.DTO;
 
+
+import java.time.LocalDateTime;
+
 public class LegalcaseDTO {
 	private String full_name;
 	private String email;
 	private String password;
+	private LocalDateTime createdAt;
+	
 	//private String Confirm_password;
 	private String role;
 	public String getFull_name() {
@@ -30,9 +35,19 @@ public class LegalcaseDTO {
 //	public void setConfirm_password(String confirm_password) {
 //		Confirm_password = confirm_password;
 //	}
+	
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
+	}
+	
+	
 	public String getRole() {
 		return role;
 	}
+	
 	public void setRole(String role) {
 		this.role = role;
 	}

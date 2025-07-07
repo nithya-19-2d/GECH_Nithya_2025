@@ -17,7 +17,7 @@ public class Customsucesshandler implements AuthenticationSuccessHandler {
 			Authentication authentication) throws IOException, ServletException {
 		//collection<? extens Granted Authority> authentication = authentication.
 				var authorities = authentication.getAuthorities();
-				
+				request.getSession().setAttribute("success", "Login successfull !!!");
 				if(authorities.stream().anyMatch(a -> a.getAuthority().equals("ROLE_LAWYER"))) {
 					response.sendRedirect("/lawyer_dashboard");
 				}else if(authorities.stream().anyMatch(a -> a.getAuthority().equals("ROLE_CLIENT"))){
@@ -25,9 +25,10 @@ public class Customsucesshandler implements AuthenticationSuccessHandler {
 				}
 				else if(authorities.stream().anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN"))){
 					response.sendRedirect("/admin");
-				}else {
-					response.sendRedirect("error");
-				};
+				}
+//				else {
+//					response.sendRedirect("error");
+//				}
 		
 	}
 

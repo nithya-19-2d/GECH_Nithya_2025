@@ -30,7 +30,8 @@ public class Arrayinjava {
 		int number= sc.nextInt();
 		int [] arr1 = new int[number];
 		
-		System.out.println("Enter a value for array:");
+		System.out.println("Enter a value"
+				+ " for array:");
 		for(int i=0;i<arr1.length; i++) {
 			System.out.println("Enter "+i+"th element: " );
 			arr1[i] = sc.nextInt();

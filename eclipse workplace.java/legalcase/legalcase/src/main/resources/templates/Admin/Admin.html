@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{adlayout :: adlayout(~{::title}, ~{::section})}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - LegalCMS</title>
+
+</head>
+
+<body>
+    <section>
+        <div class="container-fluid">
+
+            <div class="row">
+                <!-- Main Content -->
+                <div class="content">
+
+                    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-5 pt-3">
+                        <div th:if="${success}">
+                            <p style="color:rgb(13, 87, 39); font-size:28px;" th:text="${success}"></p>
+                        </div>
+                        <div
+                            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                            <h1 class="h2">Admin Dashboard</h1>
+                        </div>
+
+                        <!-- Stats Cards -->
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-6 col-lg-3">
+                                <div class="card card-stats">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <div class="icon bg-primary bg-opacity-10 text-primary">
+                                                <i class="fas fa-briefcase"></i>
+                                            </div>
+                                            <div class="ms-3">
+                                                <h6 class="text-muted mb-1">Total Lawyers</h6>
+                                                <h4 class="mb-0" th:text="${totallawyers}">0</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3 ">
+                                <div class="card card-stats ">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center ">
+                                            <div class="icon bg-success bg-opacity-10 text-success">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                            <div class="ms-3">
+                                                <h6 class="text-muted mb-1">Total Clients</h6>
+                                                <h4 class="mb-0" th:text="${totalclients}">0</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="card card-stats">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <div class="icon bg-info bg-opacity-10 text-info">
+                                                <i class="fas fa-file-alt"></i>
+                                            </div>
+                                            <div class="ms-3">
+                                                <h6 class="text-muted mb-1">Active Cases</h6>
+                                                <h4 class="mb-0">56</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="card card-stats">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <div class="icon bg-secondary bg-opacity-10 text-secondary">
+                                                <i class="fas fa-cog"></i>
+                                            </div>
+                                            <div class="ms-3">
+                                                <h6 class="text-muted mb-1">System Uptime</h6>
+                                                <h4 class="mb-0">99.9%</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <h2 class="h4 mb-3">Quick Actions</h2>
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-4">
+                                <div class="card quick-action-card h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="icon bg-primary bg-opacity-10 text-primary p-3 rounded-3">
+                                                <i class="fas fa-user-plus"></i>
+                                            </div>
+                                            <div class="ms-3">
+                                                <h5 class="card-title mb-0">Add New Lawyer</h5>
+                                                <p class="card-text text-muted">Register a new lawyer in the system</p>
+                                            </div>
+                                        </div>
+                                        <a th:href="@{/lawyers-new}" class="btn btn-primary">Add Lawyer</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card quick-action-card h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="icon bg-success bg-opacity-10 text-success p-3 rounded-3">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                            <div class="ms-3">
+                                                <h5 class="card-title mb-0">Add New Client</h5>
+                                                <p class="card-text text-muted">Register a new client in the system</p>
+                                            </div>
+                                        </div>
+                                        <a th:href="@{/clients-new}" class="btn btn-success">Add Client</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card quick-action-card h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="icon bg-info bg-opacity-10 text-info p-3 rounded-3">
+                                                <i class="fas fa-chart-pie"></i>
+                                            </div>
+                                            <div class="ms-3">
+                                                <h5 class="card-title mb-0">Generate Reports</h5>
+                                                <p class="card-text text-muted">Create system-wide reports</p>
+                                            </div>
+                                        </div>
+                                        <a th:href="@{/reports}" class="btn btn-info text-white">View Reports</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Users -->
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h2 class="h4 mb-0">Recent Users</h2>
+                            <a th:href="@{/users}" class="text-decoration-none">View all</a>
+                        </div>
+                        <div class="card mb-4">
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Role</th>
+                                            <th>Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="user : ${rescentusers}">
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="user-avatar bg-primary me-3">JS</div>
+                                                    <span th:text="${user.full_name}"></span>
+                                                </div>
+                                            </td>
+
+                                            <td th:text="${user.email}"></td>
+                                            <td th:text="${user.role}"><span
+                                                    class="badge bg-primary bg-opacity-10 text-primary"></span></td>
+                                            <td th:text="${#temporals.format(user.createdAt,'dd MMM yyyy')}"></td>
+                                        </tr>
+                                        <!--<tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="user-avatar bg-success me-3">SJ</div>
+                                                    <span>Sarah Johnson</span>
+                                                </div>
+                                            </td>
+                                            <td>sarah.j@example.com</td>
+                                            <td><span class="badge bg-success bg-opacity-10 text-success">Client</span>
+                                            </td>
+                                            <td>May 14, 2023</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="user-avatar bg-primary me-3">MB</div>
+                                                    <span>Michael Brown</span>
+                                                </div>
+                                            </td>
+                                            <td>mbrown@example.com</td>
+                                            <td><span class="badge bg-primary bg-opacity-10 text-primary">Lawyer</span>
+                                            </td>
+                                            <td>May 12, 2023</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="user-avatar bg-success me-3">ED</div>
+                                                    <span>Emily Davis</span>
+                                                </div>
+                                            </td>
+                                            <td>emily.davis@example.com</td>
+                                            <td><span class="badge bg-success bg-opacity-10 text-success">Client</span>
+                                            </td>
+                                            <td>May 10, 2023</td>
+                                        </tr>-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- System Status -->
+                        <h2 class="h4 mb-3">System Status</h2>
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="d-flex align-items-center">
+                                            <div class="me-2">
+                                                <span class="badge rounded-pill bg-success">&nbsp;</span>
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-0">Database</h6>
+                                                <small class="text-muted">Operational</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="d-flex align-items-center">
+                                            <div class="me-2">
+                                                <span class="badge rounded-pill bg-success">&nbsp;</span>
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-0">API</h6>
+                                                <small class="text-muted">Operational</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="d-flex align-items-center">
+                                            <div class="me-2">
+                                                <span class="badge rounded-pill bg-success">&nbsp;</span>
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-0">Storage</h6>
+                                                <small class="text-muted">Operational</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+    </section>
+
+
+</body>
+
+</html>

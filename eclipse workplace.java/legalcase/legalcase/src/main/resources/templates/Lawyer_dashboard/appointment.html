@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lawyer Appointments</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .status-btn {
+            margin: 5px;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            border: none;
+            color: white;
+        }
+
+        .confirmed {
+            background-color: #28a745;
+        }
+
+        .pending {
+            background-color: #ffc107;
+        }
+
+        .cancelled {
+            background-color: #dc3545;
+        }
+
+        .rescheduled {
+            background-color: #0dcaf0;
+        }
+
+        .inactive {
+            background-color: #6c757d;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{/lawyer_dashboard}">Lawyer Dashboard</a>
+            <div class="d-flex">
+                <a th:href="@{/login}" class="btn btn-outline-light btn-sm">Logout</a>
+            </div>
+        </div>
+    </nav><br><br>
+
+    <div class="container mt-5">
+        <h2>Appointments</h2>
+
+        <!-- Appointment Card -->
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5>Client Name: John Doe</h5>
+                <p id="appointment-date">Date: 2025-05-02</p>
+                <p id="appointment-time">Time: 10:00 AM</p>
+
+                <!-- Status Buttons -->
+                <div id="status-buttons" class="d-flex flex-wrap">
+                    <button class="status-btn inactive" onclick="updateStatus(this, 'confirmed')">Confirmed</button>
+                    <button class="status-btn inactive" onclick="updateStatus(this, 'pending')">Pending</button>
+                    <button class="status-btn inactive" onclick="updateStatus(this, 'cancelled')">Cancelled</button>
+                    <button class="status-btn inactive" onclick="openRescheduleModal()">Reschedule</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reschedule Modal -->
+    <div class="modal fade" id="rescheduleModal" tabindex="-1" aria-labelledby="rescheduleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form onsubmit="submitReschedule(event)">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="rescheduleModalLabel">Reschedule Appointment</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <label for="newDate" class="form-label">New Date:</label>
+                        <input type="date" class="form-control" id="newDate" required>
+
+                        <label for="newTime" class="form-label mt-3">New Time:</label>
+                        <input type="time" class="form-control" id="newTime" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Submit Reschedule</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function updateStatus(clickedButton, status) {
+            const buttons = clickedButton.parentElement.querySelectorAll('.status-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('confirmed', 'pending', 'cancelled', 'rescheduled');
+                btn.classList.add('inactive');
+            });
+
+            clickedButton.classList.remove('inactive');
+            clickedButton.classList.add(status);
+
+            // Save status
+            localStorage.setItem('appointmentStatus', status);
+
+            console.log(`Status updated to: ${status}`);
+        }
+
+        // Open modal
+        function openRescheduleModal() {
+            const rescheduleModal = new bootstrap.Modal(document.getElementById('rescheduleModal'));
+            rescheduleModal.show();
+        }
+
+        // Submit rescheduled date & time
+        function submitReschedule(event) {
+            event.preventDefault();
+
+            const newDate = document.getElementById('newDate').value;
+            const newTime = document.getElementById('newTime').value;
+
+            if (newDate && newTime) {
+                // Save to localStorage
+                localStorage.setItem('appointmentStatus', 'rescheduled');
+                localStorage.setItem('rescheduledDate', newDate);
+                localStorage.setItem('rescheduledTime', newTime);
+
+                // Update on page itself
+                document.getElementById('appointment-date').innerText = "Date: " + newDate;
+                document.getElementById('appointment-time').innerText = "Time: " + newTime;
+
+                // Update button styles
+                const buttons = document.querySelectorAll('.status-btn');
+                buttons.forEach(btn => {
+                    btn.classList.remove('confirmed', 'pending', 'cancelled', 'rescheduled');
+                    btn.classList.add('inactive');
+                });
+
+                const rescheduleButton = Array.from(buttons).find(btn => btn.innerText.trim() === 'Reschedule');
+                rescheduleButton.classList.remove('inactive');
+                rescheduleButton.classList.add('rescheduled');
+
+                // Close Modal
+                const rescheduleModal = bootstrap.Modal.getInstance(document.getElementById('rescheduleModal'));
+                rescheduleModal.hide();
+
+                console.log('Appointment rescheduled to:', newDate, newTime);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

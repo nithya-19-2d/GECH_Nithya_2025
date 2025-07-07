@@ -20,14 +20,14 @@ public class Customuserdatailservice implements UserDetailsService {
 	}
 
 	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
 		
-		LoyerModel loyermodel=repo.findByEmail(username)
+		LoyerModel loyermodel=repo.findByEmail(email)
 				.orElseThrow(
-						()-> new UsernameNotFoundException("username not found:"+username));
+						()-> new UsernameNotFoundException("username not found:"+email));
 		//System.out.println(loyermodel +"1111111111111");	
-		return new Customusersetails(loyermodel);
+		return new Customuserdetails(loyermodel);
 	}
 	
 

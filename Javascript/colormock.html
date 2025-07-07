@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container" id="containers">
+        <h1>hello</h1>
+        <input type="text" placeholder="enter color" id="color">
+        <button type="submit" onclick="handleClick() "> submit</button>
+    </div>
+    <script>
+        function getBgColor() {
+            const red = Math.floor(Math.random() * 256);
+            const green = Math.floor(Math.random() * 256);
+            const blue = Math.floor(Math.random() * 256);
+
+            return `rgb(${red} ${green} ${blue})`
+
+
+        }
+
+        function handleClick() {
+            const bg_color = getBgColor();
+            const input = document.getElementById("color");
+            const contain = document.getElementById("containers");
+            contain.style.backgroundColor = input.value;
+
+
+        }
+    </script>
+</body>
+
+</html>

@@ -52,7 +52,7 @@ public class LegalConfiguration {
 				.authorizeHttpRequests(auth -> auth
 //						.requestMatchers("/user").hasRole("USER")
 						.requestMatchers("/lawyer_dashboard").hasAnyRole("LAWYER","ADMIN")
-						.requestMatchers("/client_dashboard").hasAnyRole("CLIENT","ADMIN")
+						.requestMatchers("/client_dashboard").hasAnyRole("CLIENT","LAWYER","ADMIN")
 						.requestMatchers("/admin").hasRole("ADMIN")
 						
 						.requestMatchers("/","/about","/contact","/register","/service","Photos/**","css/**","js/**").permitAll() //access these page without default login
@@ -62,11 +62,15 @@ public class LegalConfiguration {
 						.loginPage("/login")
 						.loginProcessingUrl("/login")
 						//.defaultSuccessUrl("/admin",true)
+						.usernameParameter("email")
 						.successHandler(customsuccessHandler)
 						.permitAll())
 				
 				.logout(logout -> logout
+						//.logoutUrl("/logout")
 						.logoutSuccessUrl("/login?logout")
+						//.invalidateHttpSession(true)
+						//.deleteCookies("JSESSIONID")
 						.permitAll())
 				.build();
 				}

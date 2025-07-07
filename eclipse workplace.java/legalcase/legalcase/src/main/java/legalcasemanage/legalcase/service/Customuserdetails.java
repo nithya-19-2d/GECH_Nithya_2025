@@ -9,12 +9,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import legalcasemanage.legalcase.model.LoyerModel;
 
-public class Customusersetails implements UserDetails {
+public class Customuserdetails implements UserDetails {
 	
 	private LoyerModel loyermodel;
 	
 	
-	public Customusersetails(LoyerModel loyermodel) {
+	public Customuserdetails(LoyerModel loyermodel) {
 		super();
 		this.loyermodel = loyermodel;
 	}

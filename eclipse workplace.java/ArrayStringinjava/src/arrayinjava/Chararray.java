@@ -23,8 +23,8 @@ Scanner sc = new Scanner(System.in);
 			
 //			System.out.println("Enter "+i+"th element: " );
 //			arr1[i] = sc.nextInt();
-////			System.out.println("array elements are:");
-////			System.out.print(arr1[i] + "");
+//			System.out.println("array elements are:");
+//		System.out.print(arr1[i] + "");
 //		}
 //		System.out.println("array elements are:");
 //		for(char i=0;i<arr1.length; i++) {

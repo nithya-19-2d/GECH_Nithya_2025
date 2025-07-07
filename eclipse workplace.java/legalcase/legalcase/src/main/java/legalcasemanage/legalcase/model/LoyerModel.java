@@ -1,9 +1,13 @@
 package legalcasemanage.legalcase.model;
 
+
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 
 @Entity
@@ -17,7 +21,12 @@ public class LoyerModel {
 	private String password;
 	//private String Confirm_password;
 	private String role;
+	private LocalDateTime createdAt;
 	
+	@PrePersist
+	 public void prePersist() {
+        this.createdAt = LocalDateTime.now();
+    }
 	
 	public long getId() {
 		return id;
@@ -56,6 +65,16 @@ public class LoyerModel {
 	public void setRole(String role) {
 		this.role = role;
 	}
+	
+	
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
+	}
+
 	@Override
 	public String toString() {
 		return "LoyerModel [id=" + id + ", full_name=" + full_name + ", email=" + email + ", password=" + password

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Cases - Lawyer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 70px;
+        }
+
+        .case-card {
+            width: 100%;
+            margin-bottom: 20px;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .status-button {
+            margin-left: 5px;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            color: white;
+            background-color: #6c757d;
+        }
+
+        .status-active {
+            background-color: #198754 !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="lawyer_dashboard.html">Lawyer Dashboard</a>
+            <div class="d-flex">
+                <li class="nav-item"><a class="nav-link" href="law_client_request.html">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="law_client_request.html">Client
+                        Requests</a></li>
+                <li class="nav-item"><a class="nav-link" href="my cases.html">My Cases</a></li>
+                </ul>
+                <a href="login.html" class="btn btn-outline-light btn-sm">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h4 class="mb-4">My Cases</h4>
+
+        <!-- CASE CARD -->
+        <div class="card case-card p-3">
+            <div class="d-flex justify-content-between align-items-start flex-wrap">
+                <div>
+                    <h5>Case #101 - Property Dispute</h5>
+                    <p class="mb-1">Client: Rahul Sharma</p>
+                    <p class="mb-1">Case Type: Civil</p>
+                    <p class="mb-1">Court Date: 2025-05-10</p>
+                    <a href="#">View Documents</a>
+                </div>
+                <div>
+                    <button class="status-button" onclick="setStatus(this)">In Progress</button>
+                    <button class="status-button" onclick="setStatus(this)">Closed</button>
+                    <button class="status-button" onclick="setStatus(this)">Upcoming Hearing</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ANOTHER CARD -->
+        <div class="card case-card p-3">
+            <div class="d-flex justify-content-between align-items-start flex-wrap">
+                <div>
+                    <h5>Case #102 - Divorce Filing</h5>
+                    <p class="mb-1">Client: Sneha Kapoor</p>
+                    <p class="mb-1">Case Type: Family</p>
+                    <p class="mb-1">Court Date: 2025-05-20</p>
+                    <a href="#">View Documents</a>
+                </div>
+                <div>
+                    <button class="status-button" onclick="setStatus(this)">In Progress</button>
+                    <button class="status-button" onclick="setStatus(this)">Closed</button>
+                    <button class="status-button" onclick="setStatus(this)">Upcoming Hearing</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function setStatus(clickedBtn) {
+            // Get all status buttons inside this card
+            const container = clickedBtn.parentElement;
+            const buttons = container.querySelectorAll(".status-button");
+
+            // Remove 'active' class from all buttons
+            buttons.forEach(btn => btn.classList.remove("status-active"));
+
+            // Add 'active' class to clicked one
+            clickedBtn.classList.add("status-active");
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

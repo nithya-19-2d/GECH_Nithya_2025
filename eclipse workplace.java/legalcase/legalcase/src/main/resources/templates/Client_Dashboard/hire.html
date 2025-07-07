@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hire a Lawyer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 70px;
+        }
+
+        .card {
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar {
+            background-color: #1e3d6f;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{/client_dashboard}">Client Dashboard</a>
+            <div class="d-flex">
+                <a th:href="@{/login}" class="btn btn-outline-light btn-sm">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Lawyer List -->
+    <div class="container mt-4">
+        <h4 class="mb-4">Available Lawyers</h4>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+            <div class="col">
+                <div class="card p-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Adv. Ramesh Kumar</h5>
+                        <p class="card-text">Specialization: Civil Law<br>Experience: 8 years</p>
+                        <a th:href="@{/hire_form}" class="btn btn-primary">Hire</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card p-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Adv. Anjali Verma</h5>
+                        <p class="card-text">Specialization: Family Law<br>Experience: 5 years</p>
+                        <a href="@{/hire_form}" class="btn btn-primary">Hire</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card p-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Adv. Vikram Singh</h5>
+                        <p class="card-text">Specialization: Criminal Law<br>Experience: 10 years</p>
+                        <a href="@{/hire_form}" class="btn btn-primary">Hire</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

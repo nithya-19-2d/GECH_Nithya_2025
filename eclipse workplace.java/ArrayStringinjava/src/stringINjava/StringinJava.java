@@ -14,7 +14,7 @@ public class StringinJava {
 		 * how to declare the string:'
 		 * =========
 		 * 1.using string literals
-		 * String var_name = "string_name;
+		 * String var_name = "string_name";
 		 * 
 		 * 2.using new keyword
 		 * String var_name = new String("string_name")
@@ -34,9 +34,7 @@ public class StringinJava {
 		System.out.println(str1==str3); //true
 		System.out.println(str2==str4); //false
 		//
-		
-		
-		
+			
 	}
 
 }
