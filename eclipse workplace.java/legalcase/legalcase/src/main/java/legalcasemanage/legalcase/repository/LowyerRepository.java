@@ -19,6 +19,8 @@ public interface LowyerRepository extends JpaRepository<LoyerModel, Long> {
 	 List<LoyerModel> findByRole(String role);
 	 long countByRole(String role);
 	 List<LoyerModel> findTop5ByRoleNotOrderByCreatedAtDesc(String role); // latest 5 users
+	 List<LoyerModel> findByRoleNot(String role);
+
 
 }
 

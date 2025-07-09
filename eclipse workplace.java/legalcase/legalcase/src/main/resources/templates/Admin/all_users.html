@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Users</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #007bff;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>All Registered Users</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.full_name}">Name</td>
+                <td th:text="${user.email}">Email</td>
+                <td th:text="${user.role}">Role</td>
+                <td th:text="${#temporals.format(user.createdAt, 'dd MMM yyyy')}">Date</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

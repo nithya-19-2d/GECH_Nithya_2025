@@ -50,6 +50,15 @@ public class HomeController {
 	public String contact() {
 		return "Home/contact";
 	}
+	
+	@GetMapping({ "/all_users" })
+	public String allUsers(Model model) {
+		List<LoyerModel> users = repo.findByRoleNot("ROLE_ADMIN");
+		model.addAttribute("users",users);
+		return "Admin/all_users";
+
+	}
+	
 
 	@GetMapping({ "/admin" })
 	public String admin(HttpServletRequest request, Model model) {
