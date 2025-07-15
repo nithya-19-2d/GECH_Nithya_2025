@@ -8,12 +8,12 @@ Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Enter a size of an value:");
 		int number= sc.nextInt();
-		sc.nextLine();
+		sc.nextLine();    // it takes entire line with space 
 		char [] arr1 = new char[number];
 		
 		System.out.println("Enter "+number+" characters:");
 		for(int i=0;i<arr1.length; i++) {
-			arr1[i] = sc.next().charAt(0);
+			arr1[i] = sc.next().charAt(0);  // which will read only one charcter without taking space from index '0'
 			
 			//display
 			System.out.println("you entered");

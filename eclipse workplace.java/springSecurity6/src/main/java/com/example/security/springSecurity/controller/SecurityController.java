@@ -48,6 +48,7 @@ public class SecurityController {
 		
 		@PostMapping("/register")
 		public String register(@ModelAttribute StudentDTO studentDTO , RedirectAttributes redirectAttributes, Model model) {
+			//redirectAttributes  => is a object of RedirectAttributes -> is used for redirect the msg after register   and  addFlashAttribute() -> is one method  and "success" is key and "Student saved succesfully" , is a msg
 			//studentService.storeStudent(studentDTO);
 			//redirectAttributes.addFlashAttribute("success","student saved succefully");
 			try {

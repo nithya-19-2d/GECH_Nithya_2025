@@ -1,5 +1,6 @@
 package com.example.security.springSecurity.DTO;
 
+//not use Id , because itsa autoincremented , do its no need to pass in this.
 public class StudentDTO {
 	private String name;
 	private String email;

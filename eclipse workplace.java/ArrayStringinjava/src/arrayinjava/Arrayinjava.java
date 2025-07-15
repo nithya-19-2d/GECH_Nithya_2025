@@ -24,7 +24,7 @@ public class Arrayinjava {
 //			System.out.println(i+ "");
 //		}
 		
-		Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);    //System.in means taking the user input from keyboard
 		
 		System.out.println("Enter a size of an value:");
 		int number= sc.nextInt();
@@ -44,7 +44,7 @@ public class Arrayinjava {
 			//we can delare another variable also
 			
 		}
-		sc.close();
+		sc.close();   // close() is used to close the scanner
 		
 	}
 	

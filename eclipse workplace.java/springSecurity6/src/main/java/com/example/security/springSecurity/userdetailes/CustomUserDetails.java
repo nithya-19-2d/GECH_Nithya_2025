@@ -13,7 +13,7 @@ public class CustomUserDetails implements UserDetails
 {
 	private SecurityModel securitymodels;
 
-	//constructor conjuction
+	//constructor injuction
 	public CustomUserDetails(SecurityModel securitymodels) {
 		super();
 		this.securitymodels = securitymodels;

@@ -26,7 +26,7 @@ public class CustomUserDetailService implements UserDetailsService {
 				.orElseThrow(
 						()-> new UsernameNotFoundException("username not found:"+username));
 				
-		return new CustomUserDetails(securitymodels);
+		return new CustomUserDetails(securitymodels);  // create an object by using 'new'
 	}
 	
 
