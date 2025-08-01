@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="https://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <meta charset="UTF-8" />
@@ -211,7 +211,7 @@
             <p style="color:rgb(13, 87, 39); font-size:20px; margin: top 40px;" th:text="${success}"></p>
         </div>
 
-        <h3 class="h3" style="margin-top: 100px;">Welcome, Lawyer</h3>
+        <h3 class="h3" style="margin-top: 100px;">Welcome,  <span  th:text="${fullname}"></span>!</h3>
         <!-- Completed Cases Grid -->
         <h5 class="mb-4">Completed Cases</h5>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">

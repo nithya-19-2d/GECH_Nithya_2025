@@ -20,6 +20,12 @@ class Student{
 		this.name = name;
 	}
 	
+	//plain old java object
+	/*
+	 * it does not contain inheritence, and interface
+	 * all fiels should private
+	 * it containes getter and setters, constructor(no-args) , tostrings */
+	
 	
 	
 }

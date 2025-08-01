@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" th:replace="~{layout :: layout(~{::title}, ~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - Spring Boot App</title>
+   
+</head>
+<body>
+
+<section>
+
+	<div th:if="${success}" class="alert alert-success mt-3" role="alert">
+	       <p th:text="${success}"></p>
+	   </div>
+<!-- Navbar -->
+
+<!-- navbar end -->
+
+<!-- Hero Section -->
+<div class="container mt-5 p-5 text-center">
+    <h1 class="display-4">Welcome to My Spring Boot App</h1>
+    <p class="lead">Build robust Java applications using Spring Boot and Thymeleaf.</p>
+    <a class="btn btn-primary btn-lg" th:href="@{/register}">Get Started</a>
+</div>
+
+<!-- Footer -->
+
+
+
+
+</section>
+</body>
+</html>

@@ -13,6 +13,7 @@ int main()
     {
         if (i <= 1)
             next = i;
+
         else
         {
             next = first + second;

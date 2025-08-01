@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="https://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <meta charset="UTF-8" />
@@ -168,7 +168,7 @@
             <p style="color:rgb(13, 87, 39); font-size:20px;" th:text="${success}"></p>
         </div>
 
-        <h3 class="mb-4" style="margin-top: 100px;">Welcome, Client</h3>
+        <h3 class="mb-4" style="margin-top: 100px;" >Welcome, <span th:text = "${fullname}"></span>!</h3>
 
         <!-- Active Cases or Hired Lawyers -->
         <h5>Active Cases</h5>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Register</title>
+<style>
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background: #f5f7fa;
+}
+
+h2 {
+	text-align: center;
+	margin-top: 30px;
+	color: #333;
+}
+
+form {
+	max-width: 500px;
+	margin: 30px auto;
+	background: #fff;
+	padding: 20px 30px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+	display: block;
+	margin-bottom: 6px;
+	font-weight: bold;
+	color: #444;
+}
+
+input[type="text"], input[type="email"], input[type="password"], select
+	{
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 16px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	font-size: 14px;
+}
+
+button {
+	width: 100%;
+	padding: 12px;
+	background-color: #007bff;
+	color: white;
+	font-size: 16px;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+button:hover {
+	background-color: #0056b3;
+}
+
+@media ( max-width : 600px) {
+	form {
+		padding: 15px 20px;
+	}
+	h2 {
+		font-size: 22px;
+	}
+}
+</style>
+</head>
+<body>
+	<h2>Add Employee</h2>
+	<form th:action="@{/update-employee(id = ${employeedto.id})}"
+		method="Post" th:object="${employeedto}">
+		<label for="name"> Name:</label> <input type="text" th:field="*{name}"
+			name="name" /><br /> <label for="email"> Email:</label> <input
+			type="email" th:field="*{email}" name="email" /><br />
+		<!--  <label for = "password">Password: </label>
+    <input type="password" th:field="*{password}" name = "password" /><br/>-->
+
+		<label for="department.id">Department: </label> <select
+			th:field="*{departmentId}">
+			<option value="" >Select Department</option>
+			<option th:each="d : ${departments}" th:value="${d.id}"
+				th:text="${d.name}" name="department.id"></option>
+		</select><br /> <label for="role.id"> Role: </label> <select
+			th:field="*{roleId}">
+			<option value="" >Select Role</option>
+			<option th:each="r : ${roles}" th:value="${r.id}" th:text="${r.name}"
+				name="role.id"></option>
+		</select><br />
+
+		<!--  Manager:
+    <select th:field="*{manager.id}">
+        <option value="">-- None --</option>
+        <option th:each="m : ${managers}" th:value="${m.id}" th:text="${m.name}"></option>
+    </select><br/>-->
+
+		<label for="address.street"> Street: </label> <input type="text"
+			th:field="*{address.street}" name="address.street" /><br /> <label
+			for="address.city"> City: </label> <input type="text"
+			th:field="*{address.city}" name="address.city" /><br />
+
+		<button type="submit">Add</button>
+	</form>
+
+</body>
+</html>

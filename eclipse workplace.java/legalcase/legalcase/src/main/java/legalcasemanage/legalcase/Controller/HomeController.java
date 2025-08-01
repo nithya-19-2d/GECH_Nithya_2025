@@ -2,6 +2,8 @@ package legalcasemanage.legalcase.Controller;
 
 import java.util.List;
 
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +19,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import legalcasemanage.legalcase.DTO.LegalcaseDTO;
 import legalcasemanage.legalcase.model.LoyerModel;
 import legalcasemanage.legalcase.repository.LowyerRepository;
+import legalcasemanage.legalcase.service.Customuserdetails;
 import legalcasemanage.legalcase.service.Legalservice;
 
 @Controller
@@ -141,22 +144,24 @@ public class HomeController {
 	}
 
 	@GetMapping({ "/lawyer_dashboard" })
-	public String lawdashboard(HttpServletRequest request, Model model) {
+	public String lawdashboard(HttpServletRequest request,@AuthenticationPrincipal Customuserdetails userDetails, Model model) {
 		String success_msg = (String) request.getSession().getAttribute("success");
 		if (success_msg != null) {
 			model.addAttribute("success", success_msg);
 			request.getSession().removeAttribute("success");
 		}
+		model.addAttribute("fullname", userDetails.getFullname());
 		return "Lawyer_dashboard/Lawyer_dashboard";
 	}
 
 	@GetMapping({ "/client_dashboard" })
-	public String clientdashboard(HttpServletRequest request, Model model) {
+	public String clientdashboard(HttpServletRequest request, @AuthenticationPrincipal Customuserdetails userDetails, Model model) {
 		String success_msg = (String) request.getSession().getAttribute("success");
 		if (success_msg != null) {
 			model.addAttribute("success", success_msg);
 			request.getSession().removeAttribute("success");
 		}
+		model.addAttribute("fullname", userDetails.getFullname());
 		return "Client_Dashboard/Client_dashboard";
 	}
 

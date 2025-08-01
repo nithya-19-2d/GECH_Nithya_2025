@@ -1,0 +1,19 @@
+/*
+DMA(dynamic memory allocation => giving size or memory during run time , ex: giving the size of the memory through user during run time.
+SMA=giving the size or memory during complile time , ex: declare the size of array during writing the program. 
+
+4 types=>in DMA
+ malloc
+ calloc
+ realloc
+ free
+
+ malloc=>ptr = (datatype_ptr)malloc(sizeof(datatype))  = here all the values going to stored in the heap(is a huge container) , and then it will become garbage value
+ 
+ calloc => ptr =(datatype)calloc(n,size(data)) => take random n numbers and value will become '0';
+
+ Realloc=>
+
+ Free=>
+
+)*/

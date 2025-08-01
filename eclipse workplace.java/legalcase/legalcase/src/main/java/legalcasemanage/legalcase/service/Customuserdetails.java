@@ -36,5 +36,11 @@ public class Customuserdetails implements UserDetails {
 		// TODO Auto-generated method stub
 		return loyermodel.getEmail();
 	}
+	
+	
+	public String getFullname() {
+		// TODO Auto-generated method stub
+		return loyermodel.getFull_name();
+	}
 
 }

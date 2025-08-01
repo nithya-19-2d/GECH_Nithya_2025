@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+        }
+
+        .profile-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .edit-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #ffc107;
+            color: black;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .edit-button:hover {
+            background-color: #e0a800;
+        }
+
+        .profile-header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .profile-header h2 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .profile-body {
+            padding: 30px 20px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        .info-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 10px 0;
+        }
+
+        .info-label {
+            width: 30%;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .info-value {
+            width: 70%;
+            color: #333;
+        }
+
+        @media (max-width: 600px) {
+
+            .info-label,
+            .info-value {
+                width: 100%;
+            }
+
+            .edit-button {
+                position: static;
+                display: block;
+                margin: 10px auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="profile-container">
+        <!-- Edit Button -->
+        <a th:href="@{/edit-profile(id = ${employee.id})}" class="edit-button">Edit</a>
+
+        <div class="profile-header">
+            <h2 th:text="${employee.name}"></h2>
+            <p th:text="${#strings.capitalize(#strings.substring(employee.role.name, 5).toLowerCase())}"></p>
+
+        </div>
+
+        <div class="profile-body">
+            <div class="section-title">Contact Information</div>
+            <div class="info-row">
+                <div class="info-label">Email:</div>
+                <div class="info-value" th:text="${employee.email}"></div>
+            </div>
+
+            <div class="section-title">Department Details</div>
+            <div class="info-row">
+                <div class="info-label">Department:</div>
+                <div class="info-value" th:text="${employee.department.name}"></div>
+            </div>
+
+            <div class="section-title">Address</div>
+            <div class="info-row">
+                <div class="info-label">Street:</div>
+                <div class="info-value" th:text="${employee.address.street}"></div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">City:</div>
+                <div class="info-value" th:text="${employee.address.city}"></div>
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>

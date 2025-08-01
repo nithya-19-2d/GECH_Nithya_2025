@@ -23,7 +23,7 @@ public class InheritenceInJava2 {
 		/*
 		 * Inheritence
 		 * =======
-		 * ectending the proprties of parent class to child class
+		 * extending the proprties of parent class to child class
 		 * properties(state , action(behaviour)
 		 * types:
 		 * =======

@@ -3,14 +3,15 @@
 int main()
 {
     int n, value, i, j;
-    int arr[n];
+
     printf("Enter a size of array \n");
     scanf("%d", &n);
+    int arr[n];
     printf("Enter a %d element \n", n);
     for (i = 0; i < n; i++)
     {
-        scanf("%d", &value);
-        arr[i] = value;
+        scanf("%d", &arr[i]);
+        // arr[i] = value;
     }
 
     printf("original value \n");
@@ -33,10 +34,10 @@ int main()
         }
     }
 
-    for (j = 0; j < n; j++)
+    for (i = 0; i < n; i++)
     {
 
-        printf("the sorting elements are %d \n", arr[j]);
+        printf("the sorting elements are %d \n", arr[i]);
     }
 
     return 0;

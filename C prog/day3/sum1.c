@@ -8,9 +8,6 @@ int main()
 
     for (int i = 0; i <= a; i++)
     {
-        printf("%d + %d : %d", sum, i, sum+i);
-       
+        printf("%d + %d : %d", sum, i, sum + i);
     }
-
-    
 }

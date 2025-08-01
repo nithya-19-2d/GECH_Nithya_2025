@@ -19,7 +19,7 @@ int main()
     scanf("%d", &num);
     while (i <= num)
     {
-        sum = sum + i;  //sum+=i;
+        sum = sum + i; // sum+=i;
         i++;
     }
 

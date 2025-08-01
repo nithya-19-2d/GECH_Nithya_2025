@@ -18,10 +18,11 @@ int main()
     // print 9 tables
     printf("enter a number \n");
     scanf("%d", &a);
-    for (int i = 0; i <= 10; i++)
+    for (int i = 1; i <= 10; i++)
     {
 
-        printf("%d*%d :%d \n", a, i, a * i);
+        // printf("%d*%d :%d \n", a, i, a * i);
+        printf("The multiple of %d is : %d \n", a, a * i);
     }
 
     return 0;
