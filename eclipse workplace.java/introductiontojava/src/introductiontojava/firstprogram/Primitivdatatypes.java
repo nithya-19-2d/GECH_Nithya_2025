@@ -18,8 +18,8 @@ public class Primitivdatatypes {
 		char gender;
 		System.out.println("Enter a charcter");
 		Scanner scanner = new Scanner(System.in);
-		//gender = sc.nextLine().charAt(0);  //it will take entire line with space 
-		gender = scanner.next().charAt(0);  //it will take single character without space from 0 index
+		gender = sc.nextLine().charAt(0);  //it will take entire line with space 
+		//gender = scanner.next().charAt(0);  //it will take single character without space from 0 index
 		System.out.println("The character is:" +gender);
 	}
 

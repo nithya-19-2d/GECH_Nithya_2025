@@ -33,8 +33,8 @@ public class Arraymaxsec {
 		}
 		
 		
-		int secmin = Integer.MAX_VALUE;
-		int secmax = Integer.MIN_VALUE;
+		int secmin = max;
+		int secmax = min;
 		
 		for(int i=0; i<n; i++) {
 		if(arr[i]<secmin && arr[i]>min) {

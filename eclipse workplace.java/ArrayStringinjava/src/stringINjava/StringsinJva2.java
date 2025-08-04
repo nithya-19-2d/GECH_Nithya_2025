@@ -44,8 +44,7 @@ public class StringsinJva2 {
 		System.out.println(str3.isBlank()); // true
 		
 		
-		
-
+	
 	}
 
 }
