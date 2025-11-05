@@ -7,6 +7,7 @@ int main()
     printf("Enter a size of array \n");
     scanf("%d", &n);
     int arr[n];
+
     printf("Enter a %d element \n", n);
     for (i = 0; i < n; i++)
     {
@@ -23,6 +24,7 @@ int main()
     printf("the sorting values are \n");
     for (i = 0; i < n; i++)
     {
+
         for (j = 0; j < n; j++)
         {
             if (arr[j] > arr[j + 1])
