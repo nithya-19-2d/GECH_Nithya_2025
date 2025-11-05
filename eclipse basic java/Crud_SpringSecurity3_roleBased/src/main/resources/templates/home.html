@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::title}, ~{::section})}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management System</title>
+
+    <style>
+        body {
+            background: linear-gradient(to right, #74ebd5, #9face6);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .card {
+            border-radius: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn {
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <!--navbar-->
+
+        <!--Header page-->
+        <div class="container mt-5">
+            <div class="card text-center p-5">
+                <h1 class="mb-3">Welcome to Employee Management System</h1>
+                <p class="lead">Manage employees efficiently with CRUD operations</p>
+                <div class="mt-4">
+                    <a th:href="@{/list_employee}" class="btn btn-primary btn-lg">View Employees</a>
+                    <a th:href="@{/add_employee}" class="btn btn-success btn-lg">Add Employee</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

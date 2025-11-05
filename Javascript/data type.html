@@ -8,6 +8,22 @@
 </head>
 
 <body>
+
+    <!--
+    null is not an object, it is a primitive value in JavaScript.
+
+    It represents the intentional absence of any value.
+
+    The typeof operator just misreports it as "object" because of the historical bug.
+    In the very first version of JavaScript (1995), values were stored as binary “tags” to indicate their type.
+
+    Objects were represented with the binary tag 000.
+
+    Unfortunately, null was also represented with the same tag (000), so the engine couldn’t distinguish between null
+    and an object.
+
+    That mistake got locked into the language.
+    👉 Changing it later would have broken tons of existing code, so it stayed.*/-->
     <h3>1.Number</h3>
     <h3>2.String</h3>
     <h3>3.Boolean</h3>
@@ -33,7 +49,9 @@
         // console.log("Type of c:", typeof c);
 
         // boolean
-        console.log(Boolean(25 > 1));
+        //console.log(Boolean(25 > 1));
+        let z = true;
+        console.log(typeof z);
 
         // undefined
 
@@ -68,8 +86,9 @@
         let obj1 = {
             firstname: "nithya",
             lastname: "anil",
+            age: 12
         };
-        console.log("value of obj1:", obj1);
+        console.log("value of obj1:", obj1.age);
         console.log("Type of obj1:", typeof obj1);
 
 

@@ -1,5 +1,5 @@
 package com.functionalinterface;
-
+//after introduing the java 8 feature , the java will work on the functional program
 @FunctionalInterface  //this annotation is does not allowed for creating a multiple abstract method.(its optional)
 interface interface1{
 	public void display();

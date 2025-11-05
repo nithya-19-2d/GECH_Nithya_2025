@@ -21,6 +21,13 @@ public class Functioninjava {
 		int res1=f1.apply(2);
 		System.out.println(res1);
 		
+		//print the length of the string
+		
+		Function<String, Integer> P = s->s.length();
+		int res2 = P.apply("Hello");
+		System.out.println(res2);
+		
+		
 		
 	}
 

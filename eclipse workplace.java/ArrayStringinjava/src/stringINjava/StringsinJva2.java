@@ -18,7 +18,12 @@ public class StringsinJva2 {
 		 * isBlank()*/
 		String str1 = new String("Hello World");
 		String str2 = new String("hello world");
-		String str3 = new String();
+		String str3 = new String("   hello       world   ");
+		str3 = "nithya";
+		
+		String st = "nithin";
+		st = "shwetha";
+		
 		//1. equals
 		System.out.println(str1.equals(str2));
 		//2.equalsignorecase
@@ -37,11 +42,13 @@ public class StringsinJva2 {
 		//endswith
 		System.out.println(str2.endsWith("world"));
 		//trim
-		System.out.println(str2.trim()); // this is also shows the hello world
+		System.out.println(str3.trim()); // this is also shows the hello world
 		//strip
-		System.out.println(str1.strip()); // this is also shows hello World
+		System.out.println(str3.strip()); // this is also shows hello World
 		//isBlank()
 		System.out.println(str3.isBlank()); // true
+		System.out.println("name is:" +str3);
+		System.out.println(st);
 		
 		
 	

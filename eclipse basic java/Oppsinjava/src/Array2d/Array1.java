@@ -36,6 +36,8 @@ public class Array1 {
 			}
 		System.out.print( " Sum of array element is " +sum);
 		
+		
+		
 			
 		
 	}

@@ -12,6 +12,7 @@ package abstractioninjava;
 
 //anstract class or non-concrete class
 //abstaction is a abstract method which contain one abstract method., using this we can achieve partial abstraction.
+
 abstract class Person{
 	public abstract void iswalking();  // if we create abstract method using abstract keyword in the method , its shows the make the class_name(class) as abstact
     //we cannot create an instance(object) to the abstract class , because the abstract method , doesnot contain the implementaion  , to crate an object, the class must contain the implementaion for an method of an class 

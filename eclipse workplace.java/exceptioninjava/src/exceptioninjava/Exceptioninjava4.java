@@ -41,7 +41,7 @@ public class Exceptioninjava4 {
 		 *it is used to throw the exception */
 		
 		try {
-			validate(23);
+			validate(11);
 		}catch(Exception e) {
 			System.out.println(e);
 		}

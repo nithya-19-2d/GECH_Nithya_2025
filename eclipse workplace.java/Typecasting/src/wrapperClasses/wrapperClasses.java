@@ -7,7 +7,7 @@ public class wrapperClasses {
 		/*
 		 * java is a pure oop or not
 		 * =======================
-		 * -->No(primitive data type)
+		 * -->No , because its support (primitive data type) 
 		 * 
 		 * primitive data type:
 		 * 
@@ -46,7 +46,7 @@ public class wrapperClasses {
 		
 		System.out.println("\n Auto boxing /n");
 		int a =10;
-		Integer i = Integer.valueOf(a); //convert from int data type to object Integer,here 'valueOf' is the method,and its a function of class 'Integer'(Integer is the class)
+		Integer i = Integer.valueOf(a); //vlaueof()convert from int data type to object Integer,here 'valueOf' is the method,and its a function of class 'Integer'(Integer is the class)   => to conform that its in wrapper class , we use, getClass().getName()
 		System.out.println("Int:"+a);
 		System.out.println("Integer:"+i.getClass().getName());
 		
@@ -73,7 +73,7 @@ public class wrapperClasses {
 		//unboxing-->from Wrapper class to primitive
 		System.out.println("\n unboxing \n");	
 		Integer i1 =10;
-		int a1 = i1.intValue();
+		int a1 = i1.intValue();   // Value() => is for convert from wrapper class  to primitive data type  , but its a optional
 //		int a1 = i1;
 		System.out.println("Int:"+a1);
 		System.out.println("Integer:"+i1);

@@ -1,6 +1,6 @@
 package com.generate;
 
-//created one generic class with generic type 'T',we can give different type, also
+//created one generic class with generic type 'T',we can give different type, also . and it is used to help avoiding the type casting and providing type safety
 class Student<T>{
 	T student_id;
 

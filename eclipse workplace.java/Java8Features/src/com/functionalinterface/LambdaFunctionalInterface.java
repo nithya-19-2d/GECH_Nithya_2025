@@ -7,7 +7,7 @@ interface Interface2{
 interface interface3{
 	public int string(String s);  //string() is method
 }
-
+  
 interface interface4{
 	public int add(int a, int b);
 }
