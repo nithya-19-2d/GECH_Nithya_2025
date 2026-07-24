@@ -24,6 +24,7 @@ public class Listinjava {
 		l1.add(12);
 		
 		String name = (String) l1.get(0);
+		//int n1 = (int) l1.get(1);
 		
 		System.out.println(l1);
 		System.out.println(l1.get(1));

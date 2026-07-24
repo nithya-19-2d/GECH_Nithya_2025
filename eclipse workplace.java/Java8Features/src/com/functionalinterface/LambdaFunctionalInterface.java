@@ -29,9 +29,10 @@ public class LambdaFunctionalInterface {
 		 System.out.println("Result:"+res);
 		 
 		 //lambda expression for adding
-		 interface4 j=(int a, int b)->{
-			 return a+b;
-			 };
+		 interface4 j=(a,b)->a+b;
+//				 (int a, int b)->{
+//			 return a+b;
+//			 };
 			 int a = j.add(2,3);
 			 System.out.println("result:"+a);
 			 

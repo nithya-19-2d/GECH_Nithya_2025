@@ -1,5 +1,6 @@
 package practiceforinterview;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Mergedtwoarray {
@@ -42,6 +43,7 @@ public class Mergedtwoarray {
         	merged[k++] = arr2[j++];
         }
        // System.out.println(merged[0]);
+	   System.out.println(Arrays.toString(merged));
 
         for(int array : merged){  // cant access the indexed value using foe each value
         	System.out.print(array);

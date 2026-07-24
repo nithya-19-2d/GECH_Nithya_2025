@@ -12,7 +12,8 @@ public class Armstrong {
 
 		        int original = n;
 		        int sum = 0;
-		        int digits = String.valueOf(n).length();
+		        int digits
+		        = String.valueOf(n).length();
 
 		        while (n != 0) {
 		            int digit = n % 10;

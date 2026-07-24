@@ -1,7 +1,8 @@
 package Arraysinjava;
 
-import java.util.Scanner;
+import java.util.*;  // it will import all libraries
 
+//im[poert java.util.Scanner  it will read the input
 public class Array3userinput {
 	
 public static void main(String[] args) {

@@ -9,6 +9,6 @@ import legalcasemanage.legalcase.model.LoyerModel;
 
 public interface LawyerProfileRepository extends JpaRepository<LawyerProfile, Long> {
 	
-	Optional<LawyerProfile> findByEmail(String email);
+	//Optional<LawyerProfile> findByEmail(String email);
 	
 }
